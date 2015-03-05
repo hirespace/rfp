@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8" />
+    <title>The UK&#39;s Leading Venue Booking Website | Hire Space</title>
+    
+    <meta name="description" content="Hire Space lets you find and book UK venues for free. From affordable community spaces and meeting rooms to unique event spaces, Hire Space makes finding a venue quick and easy." />
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
+
+</head>
+<body >   
+    <header id="header" class="clearfix">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed hidden-xs" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+              <a class="navbar-brand" href="/">
+                <h1><span>Hire Space</span></h1>
+            </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+		            <li class="hidden-phone">
+		                <a href="/Home/SearchMap" id="searchButton" class="btn btn-primary upper">Search</a>
+		            </li>		        
+				</ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
+	<section class="top-sm-pad bottom-med-margin">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-xs-12 col-sm-8 col-md-8">
+	                <h2>Request a free proposal for your event</h2>
+	                <p class="h4">If you aren't sure which venues to enquire about, let us know your event specifications and our venue experts will send you a proposal.</p>
+	                <form class="form-pretty">
+	                	<span class="input input--juro">
+							<input class="input__field input__field--juro" type="text" id="input-28" />
+							<label class="input__label input__label--juro" for="input-28">
+								<span class="input__label-content input__label-content--juro">First Name</span>
+							</label>
+						</span>
+
+						<div class="cs-select cs-skin-border" tabindex="0">
+							<span class="cs-placeholder">Style</span>
+							<div class="cs-options">
+								<ul>
+									<li data-value="any" data-option=""><span>Any</span></li>
+									<li data-value="traditional" data-option=""><span>Traditional</span></li>
+									<li data-value="modern" data-option=""><span>Modern</span></li>
+									<li data-value="hipster" data-option=""><span>Hipster</span></li>
+									<li data-value="spacious" data-option=""><span>Spacious</span></li>
+									<li data-value="casual" data-option=""><span>Casual</span></li>
+									<li data-value="affordable" data-option=""><span>Affordable</span></li>
+								</ul>
+							</div>
+							<select class="cs-select cs-skin-border">
+								<option selected="" disabled="" value="">Style</option>
+								<option value="any">Any</option>
+								<option value="traditional">Traditional</option>
+								<option value="modern">Modern</option>
+								<option value="hipster">Hipster</option>
+								<option value="spacious">Spacious</option>
+								<option value="casual">Casual</option>
+								<option value="affordable">Affordable</option>
+							</select>
+						</div>
+
+						
+	                </form>
+	                <form class="clearfix top-margin form-horizontal proposal-form inverse-section" action="/Proposal" method="POST">
+	                    <div class="form-group">
+	                        <em class="h5 no-margin col-md-12">Fields marked with an asterisk (*) are required.</em>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerName">Contact Name*</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <input type="text" id="customerName" class="form-control" name="customerName" required placeholder="What should we call you?" />
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerEmail">Contact Email*</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <input type="email" id="customerEmail" class="form-control" name="customerEmail" required placeholder="Your email" />
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerPhone">Contact Phone Number*</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <input type="tel" id="customerPhone" class="form-control" name="customerPhone" required placeholder="Your phone number" />
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="eventType">Event Type*</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <input type="text" id="eventType" class="form-control" name="eventType" required placeholder="e.g. Christmas Party, Wedding, AGM." />
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="startDate">Start Date and Time*</label>
+	                        <div class="col-xs-6 col-sm-4 col-md-3">
+	                            <div class="input-group">
+	                                <input type="text" class="date-picker form-control" id="startDate" name="startDate" required placeholder="Start date">
+	                                <span class="input-group-addon">
+	                                    <span class="awe-calendar"></span>
+	                                </span>
+	                            </div>
+	                        </div>
+	                        <div class="col-xs-6 col-sm-4 col-md-3">
+	                            <div class="input-group">
+	                                <label for="startTime" class="sr-only">Start Time</label>
+	                                <input type="text" class="time-picker form-control" id="startTime" required name="startTime">
+	                                <span class="input-group-addon">
+	                                    <span class="awe-time"></span>
+	                                </span>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="city">City*</label>
+	                        <div class="col-xs-12 col-sm-4 col-md-3">
+	                            <select class="form-control" name="city" id="city" required>
+	                                <option value="" disabled selected>Select a city</option>
+	                                        <option value="London">London</option>
+	                                        <option value="Manchester">Manchester</option>
+	                                        <option value="Liverpool">Liverpool</option>
+	                                        <option value="Birmingham">Birmingham</option>
+
+	                            </select>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="location">Location*</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <input type="text" id="location" class="form-control" name="location" required placeholder="e.g. West End, City." />
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="budget">Budget*</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <div class="input-group">
+	                                <span class="input-group-addon">£</span>
+	                                <input type="number" id="budget" class="form-control" name="budget" required placeholder="Estimated total spend for event." />
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="numberGuests">Number of guests and layout type</label>
+	                        <div class="col-xs-4 col-sm-4 col-md-2">
+	                            <div class="input-append">
+	                                <input type="number" class="form-control" id="numberGuests" name="numberGuests" />
+	                            </div>
+	                        </div>
+	                        <div class="col-xs-8 col-sm-8 col-md-4">
+	                            <div class="input-append">
+	                                <label for="numberType" class="sr-only">Layout type</label>
+	                                <select id="numberType" name="numberType" class="form-control">
+	                                    <option value="Any">Any layout</option>
+	                                    <option value="Reception">Reception</option>
+	                                    <option value="U-Shaped">U-Shaped</option>
+	                                    <option value="Cabaret">Cabaret</option>
+	                                    <option value="Theatre">Theatre</option>
+	                                    <option value="Buffet">Buffet</option>
+	                                    <option value="Boardroom">Boardroom</option>
+	                                    <option value="Dining">Dining</option>
+	                                    <option value="Classroom">Classroom</option>
+	                                    <option value="Dinner Dance">Dinner Dance</option>
+	                                    <option value="Wedding">Wedding</option>
+	                                    <option value="Standing">Standing</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="catering">Catering</label>
+	                        <div class="col-xs-12 col-sm-4 col-md-3">
+	                            <select name="catering" id="catering" class="form-control">
+	                                <option value="No">No thanks</option>
+	                                <option value="Venue to provide">Venue to provide catering</option>
+	                                <option value="Bringing own">We are bringing our own</option>
+	                            </select>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="additionalInfo">Anything else we need to know</label>
+	                        <div class="col-xs-12 col-sm-8 col-md-6">
+	                            <textarea id="additionalInfo" rows="5" name="additionalInfo" class="form-control" placeholder="E.g. Breakout spaces? Style of Venue? Outdoor space? Parking?"></textarea>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <div class="col-md-12">
+	                            <input type="text" class="hidden" name="forged" />
+	                            <input type="submit" value="Send request" class="btn btn-primary btn-large pull-right" />
+	                        </div>
+	                    </div>
+
+	                </form>
+	            </div>
+	            <div class="col-md-4">
+	            	Side bar for adverts..I mean good quote things.
+	            </div>
+	        </div>
+	    </div>
+	</section>
+
+	<!-- <section class="gold-contact-section top-med-pad bottom-med-pad">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-xs-12 col-md-12 text-center">
+		                <p class="h3 no-margin gold-contact-toggler" data-role="display-gold">Speak to our corporate events team here <span class="awe-chevron-right"></span></p>
+		            </div>
+		        </div>
+		        <div class="row gold-details" data-role="gold-details" style="display:none;">
+		        	<p class="text-center bottom-sm-margin">Our experts will use their in-depth knowledge to work with you to find the perfect venue. Try them now!</p>
+		            <div class="col-xs-12 col-sm-4 col-md-4">
+		                <a href="mailto:enquire@hirespace.com" class="btn btn-block btn-purple"><span class="awe-envelope"></span>&nbsp;enquire@hirespace.com</a>
+		            </div>
+
+		            <div class="col-xs-12 col-sm-4 col-md-4">
+		                <a id="js-gold-contact-google-phone" href="tel:0203 397 8853" class="btn btn-block btn-purple"><span class="awe-phone"></span>&nbsp;0203 397 8853</a>
+		            </div>
+		          <div class="col-xs-12 col-sm-4 col-md-4">
+		           <a href="/Proposal/Index" class="btn btn-block btn-purple"> <span class="awe-tasks"></span>&nbsp;Request a proposal</a>
+		          </div>
+		        </div>
+		    </div>
+	</section> -->
+
+    <section>
+	    <footer class="footer top-med-pad">
+	        <div class="content bottom-sm-margin bottom-med-pad">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-sm-3 col-md-3">
+	                        <h4>Newsletter</h4>
+	                        <form class="nostyle subscribe-form" data-role="subscribe-form">
+	                            <div class="row">
+	                                <div class="col-sm-12 col-md-10 col-lg-10">
+	                                    <label for="mcname" class="sr-only">First name</label>
+	                                    <input type="text" class="form-control" placeholder="First Name" name="mcname" id="mcname" />
+	                                </div>
+	                                <div class="col-sm-12 col-md-10 col-lg-10">
+	                                    <label for="mcemail" class="sr-only">Email</label>
+	                                    <input type="email" class="form-control" placeholder="Email" id="mcemail" />
+	                                </div>
+	                                <div class="col-md-12">
+	                                    <input type="submit" class="btn btn-primary" value="Yes please" />
+	                                    <div class="alert hidden" data-role="feedback"></div>
+	                                </div>
+	                            </div>
+	                        </form>
+	                    </div>
+	                    <div class="col-sm-3 col-md-3">
+							<h4 class="link-list-title">Blogs</h4>
+							<ul class="list-unstyled link-list clearfix">
+								<li>
+									<a href="http://hirespace.com/blog">Hire Space Team</a>
+								</li>
+								<li>
+	                                <a href="http://hirespace.com/london-review">The London Review</a>
+	                            </li>
+	                            <li>
+	                                <a href="http://hirespace.com/manchester-review">The Manchester Review</a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <div class="col-sm-3 col-md-3">
+	                        <h4 class="link-list-title">Venues</h4>
+	                        <ul class="list-unstyled link-list clearfix">
+	                            <li>
+	                                <a href="http://venues.hirespace.com"><span class="awe-signin"></span> Venue Login</a>
+	                            </li>
+	                            <li>
+	                                <a href="/Why-List-Your-Venue">List Your Venue</a>
+	                            </li>
+	                            <li>
+	                                <a href="/Pricing">Pricing (It's Free)</a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <div class="col-sm-3 col-md-3">
+	                        <h4 class="link-list-title">Hire Space</h4>
+	                        <ul class="list-unstyled link-list">
+	                            <li>
+	                                <a href="/About-Us">About</a>
+	                             </li>
+	                            <li>
+	                                <a href="/Contact-Us">Contact Us</a>
+	                            </li>
+	                            <li>
+	                                <a href="/Jobs">Jobs</a>
+	                            </li>
+	                            <li>
+	                                <a href="/Legal">Legal</a>
+	                            </li>
+	                            <li>
+	                                <a href="/Press">Media And Press</a>
+	                            </li>
+	                            <li>
+	                                <a href="/The-Team">The Team</a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="bottom">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-xs-12 col-sm-6 col-md-4">
+	                        <small class="copyright">&copy; 2015 Hire Space Website Ltd. All Rights Reserved.</small>
+	                    </div>
+	                    <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-3">
+	                        <ul class="list-unstyled clearfix connect">
+	                            <li class="pull-left">
+	                                <a href="http://www.facebook.com/HireSpace"><span class="awe-facebook"></span><span class="sr-only">Facebook</span></a>
+	                            </li>
+	                            <li class="pull-left">
+	                                <a href="http://twitter.com/HireSpace"><span class="awe-twitter"></span><span class="sr-only">Twitter</span></a>
+	                            </li>
+	                            <li class="pull-left">
+	                                <a href="http://pinterest.com/hirespace/"><span class="awe-pinterest"></span><span class="sr-only">Pinterest</span></a>
+	                            </li>
+	                            <li class="pull-left">
+	                                <a href="http://www.linkedin.com/company/hire-space"><span class="awe-linkedin"></span><span class="sr-only">LinkedIn</span></a>
+	                            </li>
+	                            <li class="pull-left">
+	                                <a href="http://plus.google.com/105635852387109078549/posts"><span class="awe-google-plus"></span><span class="sr-only">Google+</span></a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </footer>
+	</section>
+
+    <script src="js/new.js"></script>
+</body>
+</html>
