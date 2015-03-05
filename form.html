@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
 
 </head>
 <body >   
@@ -46,44 +48,93 @@
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-xs-12 col-sm-8 col-md-8">
-	                <h2>Request a free proposal for your event</h2>
-	                <p class="h4">If you aren't sure which venues to enquire about, let us know your event specifications and our venue experts will send you a proposal.</p>
+	            	<h2>Let us know about your conference</h2>
 	                <form class="form-pretty">
-	                	<span class="input input--juro">
-							<input class="input__field input__field--juro" type="text" id="input-28" />
-							<label class="input__label input__label--juro" for="input-28">
-								<span class="input__label-content input__label-content--juro">First Name</span>
-							</label>
-						</span>
-
-						<div class="cs-select cs-skin-border" tabindex="0">
-							<span class="cs-placeholder">Style</span>
-							<div class="cs-options">
-								<ul>
-									<li data-value="any" data-option=""><span>Any</span></li>
-									<li data-value="traditional" data-option=""><span>Traditional</span></li>
-									<li data-value="modern" data-option=""><span>Modern</span></li>
-									<li data-value="hipster" data-option=""><span>Hipster</span></li>
-									<li data-value="spacious" data-option=""><span>Spacious</span></li>
-									<li data-value="casual" data-option=""><span>Casual</span></li>
-									<li data-value="affordable" data-option=""><span>Affordable</span></li>
-								</ul>
+	                	<div class="row" style="min-height: 95px;">
+		                	<div class="bottom-sm-margin col-md-6">
+			                	<span class="input input--juro">
+									<input class="input__field input__field--juro" type="text" id="input-1" />
+									<label class="input__label input__label--juro" for="input-1">
+										<span class="input__label-content input__label-content--juro">Name of event</span>
+									</label>
+								</span>
 							</div>
-							<select class="cs-select cs-skin-border">
-								<option selected="" disabled="" value="">Style</option>
-								<option value="any">Any</option>
-								<option value="traditional">Traditional</option>
-								<option value="modern">Modern</option>
-								<option value="hipster">Hipster</option>
-								<option value="spacious">Spacious</option>
-								<option value="casual">Casual</option>
-								<option value="affordable">Affordable</option>
-							</select>
+
+							
+							<div class="bottom-sm-margin col-md-6">
+								<span class="input input--juro" style="width: 170px;">
+									<input class="input__field input__field--juro" type="text" id="input-2" />
+									<label class="input__label input__label--juro" for="input-2">
+										<span class="input__label-content input__label-content--juro">Number of guests</span>
+									</label>
+								</span>
+							</div>
 						</div>
 
-						
+						<div class="row" style="min-height: 95px;">
+							<div class="bottom-sm-margin col-md-6">
+								<select class="cs-select cs-skin-elastic">
+									<option selected="" disabled="" value="">Style</option>
+									<option value="any">Any</option>
+									<option value="traditional">Traditional</option>
+									<option value="modern">Modern</option>
+									<option value="hipster">Hipster</option>
+									<option value="spacious">Spacious</option>
+									<option value="casual">Casual</option>
+									<option value="affordable">Affordable</option>
+								</select>
+							</div>
+
+							<div class="bottom-sm-margin col-md-6">
+								<select class="cs-select cs-skin-elastic">
+									<option selected="" disabled="" value="">Layout</option>
+									<option value="any">Any</option>
+									<option value="theatre">Theatre</option>
+									<option value="caberet">Cabaret</option>
+									<option value="classroom">Classroom</option>
+									<option value="reception">Reception</option>
+									<option value="ushaped">U-Shaped</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="row" style="min-height: 95px;">
+							<div class="bottom-sm-margin col-md-6">
+								<select class="cs-select cs-skin-elastic">
+									<option selected="" disabled="" value="">City</option>
+									<option value="birmingham">Birmingham</option>
+									<option value="liverpool">Liverpool</option>
+									<option value="london">London</option>
+									<option value="manchester">Manchester</option>
+								</select>
+							</div>
+
+							<div class="bottom-sm-margin col-md-6">
+								<span class="input input--juro">
+									<input class="input__field input__field--juro" type="text" id="input-3" />
+									<label class="input__label input__label--juro" for="input-3">
+										<span class="input__label-content input__label-content--juro">Area of City</span>
+									</label>
+								</span>
+							</div>
+						</div>
+
+						<div class="row" style="min-height: 95px;">
+							<div class="bottom-sm-margin col-md-6">
+								<span class="input input--juro" style="width: 200px;">
+									<input class="input__field input__field--juro" type="text" id="input-4" />
+									<label class="input__label input__label--juro" for="input-4">
+										<span class="input__label-content input__label-content--juro">Budget</span>
+									</label>
+								</span>
+							</div>
+						</div>
+
 	                </form>
-	                <form class="clearfix top-margin form-horizontal proposal-form inverse-section" action="/Proposal" method="POST">
+
+
+
+	                <!-- <form class="clearfix top-margin form-horizontal proposal-form inverse-section" action="/Proposal" method="POST">
 	                    <div class="form-group">
 	                        <em class="h5 no-margin col-md-12">Fields marked with an asterisk (*) are required.</em>
 	                    </div>
@@ -221,7 +272,7 @@
 	                        </div>
 	                    </div>
 
-	                </form>
+	                </form> -->
 	            </div>
 	            <div class="col-md-4">
 	            	Side bar for adverts..I mean good quote things.
@@ -362,6 +413,8 @@
 	    </footer>
 	</section>
 
+	<script src="js/selectFX.js"></script>
     <script src="js/new.js"></script>
+
 </body>
 </html>
