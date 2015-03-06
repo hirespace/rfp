@@ -134,6 +134,19 @@ label {
     background-size: cover;
 }
 
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+}
+.btn-lg .awe {
+	font-size: 23px;
+	position: relative;
+	left: 4px;
+	top: -1px;
+	line-height: 18px;
+}
+
 .form-stepper {
 	font-size: 20px;
 	padding-bottom: 20px;
