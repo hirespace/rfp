@@ -124,7 +124,7 @@ if ( typeof define === 'function' && define.amd ) {
     
 $(function () {
   $('[data-toggle="popover"]').popover()
-})
+});
 
 $('[data-toggle="popover"]').click( function(event){
   event.preventDefault();
