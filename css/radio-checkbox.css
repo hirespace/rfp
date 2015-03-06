@@ -1,0 +1,173 @@
+.checkbox, .radio {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    padding-left: 32px;
+    position: relative;
+    transition: color 0.25s linear 0s;
+    cursor: pointer;
+}
+.checkbox .icons, .radio .icons {
+    color: #bdc3c7;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    height: 20px;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 20px;
+}
+.checkbox .icons .icon-checked, .radio .icons .icon-checked {
+    opacity: 0;
+}
+.checkbox .icon-checked, .radio .icon-checked, .checkbox .icon-unchecked, .radio .icon-unchecked {
+    background-color: rgba(0, 0, 0, 0);
+    display: inline-table;
+    filter: none;
+    left: 0;
+    margin: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: color 0.25s linear 0s;
+}
+.checkbox .icon-checked::before, .radio .icon-checked::before, .checkbox .icon-unchecked::before, .radio .icon-unchecked::before {
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Flat-UI-Pro-Icons;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    text-transform: none;
+}
+.checkbox .icon-checked::before {
+    content: "";
+}
+.checkbox .icon-unchecked::before {
+    content: "";
+}
+.radio .icon-checked::before {
+    content: "";
+}
+.radio .icon-unchecked::before {
+    content: "";
+}
+.checkbox input.custom-checkbox[type="checkbox"], .radio input.custom-checkbox[type="checkbox"], .checkbox input.custom-radio[type="radio"], .radio input.custom-radio[type="radio"] {
+    height: 20px;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none !important;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:hover:not(.nohover):not(:disabled) + .icons .icon-unchecked, .radio input.custom-checkbox[type="checkbox"]:hover:not(.nohover):not(:disabled) + .icons .icon-unchecked, .checkbox input.custom-radio[type="radio"]:hover:not(.nohover):not(:disabled) + .icons .icon-unchecked, .radio input.custom-radio[type="radio"]:hover:not(.nohover):not(:disabled) + .icons .icon-unchecked {
+    opacity: 0;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:hover:not(.nohover):not(:disabled) + .icons .icon-checked, .radio input.custom-checkbox[type="checkbox"]:hover:not(.nohover):not(:disabled) + .icons .icon-checked, .checkbox input.custom-radio[type="radio"]:hover:not(.nohover):not(:disabled) + .icons .icon-checked, .radio input.custom-radio[type="radio"]:hover:not(.nohover):not(:disabled) + .icons .icon-checked {
+    filter: none;
+    opacity: 1;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:checked + .icons, .radio input.custom-checkbox[type="checkbox"]:checked + .icons, .checkbox input.custom-radio[type="radio"]:checked + .icons, .radio input.custom-radio[type="radio"]:checked + .icons {
+    color: #535584;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:checked + .icons .icon-unchecked, .radio input.custom-checkbox[type="checkbox"]:checked + .icons .icon-unchecked, .checkbox input.custom-radio[type="radio"]:checked + .icons .icon-unchecked, .radio input.custom-radio[type="radio"]:checked + .icons .icon-unchecked {
+    opacity: 0;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:checked + .icons .icon-checked, .radio input.custom-checkbox[type="checkbox"]:checked + .icons .icon-checked, .checkbox input.custom-radio[type="radio"]:checked + .icons .icon-checked, .radio input.custom-radio[type="radio"]:checked + .icons .icon-checked {
+    color: #535584;
+    filter: none;
+    opacity: 1;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:disabled + .icons, .radio input.custom-checkbox[type="checkbox"]:disabled + .icons, .checkbox input.custom-radio[type="radio"]:disabled + .icons, .radio input.custom-radio[type="radio"]:disabled + .icons {
+    color: #e6e8ea;
+    cursor: default;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:disabled + .icons .icon-unchecked, .radio input.custom-checkbox[type="checkbox"]:disabled + .icons .icon-unchecked, .checkbox input.custom-radio[type="radio"]:disabled + .icons .icon-unchecked, .radio input.custom-radio[type="radio"]:disabled + .icons .icon-unchecked {
+    filter: none;
+    opacity: 1;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:disabled + .icons .icon-checked, .radio input.custom-checkbox[type="checkbox"]:disabled + .icons .icon-checked, .checkbox input.custom-radio[type="radio"]:disabled + .icons .icon-checked, .radio input.custom-radio[type="radio"]:disabled + .icons .icon-checked {
+    opacity: 0;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:disabled:checked + .icons, .radio input.custom-checkbox[type="checkbox"]:disabled:checked + .icons, .checkbox input.custom-radio[type="radio"]:disabled:checked + .icons, .radio input.custom-radio[type="radio"]:disabled:checked + .icons {
+    color: #e6e8ea;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:disabled:checked + .icons .icon-unchecked, .radio input.custom-checkbox[type="checkbox"]:disabled:checked + .icons .icon-unchecked, .checkbox input.custom-radio[type="radio"]:disabled:checked + .icons .icon-unchecked, .radio input.custom-radio[type="radio"]:disabled:checked + .icons .icon-unchecked {
+    opacity: 0;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:disabled:checked + .icons .icon-checked, .radio input.custom-checkbox[type="checkbox"]:disabled:checked + .icons .icon-checked, .checkbox input.custom-radio[type="radio"]:disabled:checked + .icons .icon-checked, .radio input.custom-radio[type="radio"]:disabled:checked + .icons .icon-checked {
+    color: #e6e8ea;
+    filter: none;
+    opacity: 1;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:indeterminate + .icons, .radio input.custom-checkbox[type="checkbox"]:indeterminate + .icons, .checkbox input.custom-radio[type="radio"]:indeterminate + .icons, .radio input.custom-radio[type="radio"]:indeterminate + .icons {
+    color: #bdc3c7;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:indeterminate + .icons .icon-unchecked, .radio input.custom-checkbox[type="checkbox"]:indeterminate + .icons .icon-unchecked, .checkbox input.custom-radio[type="radio"]:indeterminate + .icons .icon-unchecked, .radio input.custom-radio[type="radio"]:indeterminate + .icons .icon-unchecked {
+    filter: none;
+    opacity: 1;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:indeterminate + .icons .icon-checked, .radio input.custom-checkbox[type="checkbox"]:indeterminate + .icons .icon-checked, .checkbox input.custom-radio[type="radio"]:indeterminate + .icons .icon-checked, .radio input.custom-radio[type="radio"]:indeterminate + .icons .icon-checked {
+    opacity: 0;
+}
+.checkbox input.custom-checkbox[type="checkbox"]:indeterminate + .icons::before, .radio input.custom-checkbox[type="checkbox"]:indeterminate + .icons::before, .checkbox input.custom-radio[type="radio"]:indeterminate + .icons::before, .radio input.custom-radio[type="radio"]:indeterminate + .icons::before {
+    color: #ffffff;
+    content: "–";
+    font-size: 22px;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 20px;
+    z-index: 10;
+}
+.checkbox.primary input.custom-checkbox[type="checkbox"] + .icons, .radio.primary input.custom-checkbox[type="checkbox"] + .icons, .checkbox.primary input.custom-radio[type="radio"] + .icons, .radio.primary input.custom-radio[type="radio"] + .icons {
+    color: #34495e;
+}
+.checkbox.primary input.custom-checkbox[type="checkbox"]:checked + .icons, .radio.primary input.custom-checkbox[type="checkbox"]:checked + .icons, .checkbox.primary input.custom-radio[type="radio"]:checked + .icons, .radio.primary input.custom-radio[type="radio"]:checked + .icons {
+    color: #535584;
+}
+.checkbox.primary input.custom-checkbox[type="checkbox"]:disabled + .icons, .radio.primary input.custom-checkbox[type="checkbox"]:disabled + .icons, .checkbox.primary input.custom-radio[type="radio"]:disabled + .icons, .radio.primary input.custom-radio[type="radio"]:disabled + .icons {
+    color: #bdc3c7;
+    cursor: default;
+}
+.checkbox.primary input.custom-checkbox[type="checkbox"]:disabled + .icons.checked, .radio.primary input.custom-checkbox[type="checkbox"]:disabled + .icons.checked, .checkbox.primary input.custom-radio[type="radio"]:disabled + .icons.checked, .radio.primary input.custom-radio[type="radio"]:disabled + .icons.checked {
+    color: #bdc3c7;
+}
+.checkbox.primary input.custom-checkbox[type="checkbox"]:indeterminate + .icons, .radio.primary input.custom-checkbox[type="checkbox"]:indeterminate + .icons, .checkbox.primary input.custom-radio[type="radio"]:indeterminate + .icons, .radio.primary input.custom-radio[type="radio"]:indeterminate + .icons {
+    color: #34495e;
+}
+.input-group-addon .radio, .input-group-addon .checkbox {
+    margin: -2px 0;
+    padding-left: 20px;
+}
+.input-group-addon .radio .icons, .input-group-addon .checkbox .icons {
+    color: #e6e8ea;
+}
+.input-group-addon .radio input.custom-checkbox[type="checkbox"]:checked + .icons, .input-group-addon .checkbox input.custom-checkbox[type="checkbox"]:checked + .icons, .input-group-addon .radio input.custom-radio[type="radio"]:checked + .icons, .input-group-addon .checkbox input.custom-radio[type="radio"]:checked + .icons {
+    color: #ffffff;
+}
+.input-group-addon .radio input.custom-checkbox[type="checkbox"]:checked + .icons .icon-checked, .input-group-addon .checkbox input.custom-checkbox[type="checkbox"]:checked + .icons .icon-checked, .input-group-addon .radio input.custom-radio[type="radio"]:checked + .icons .icon-checked, .input-group-addon .checkbox input.custom-radio[type="radio"]:checked + .icons .icon-checked {
+    color: #ffffff;
+}
+.input-group-addon .radio input.custom-checkbox[type="checkbox"]:disabled + .icons, .input-group-addon .checkbox input.custom-checkbox[type="checkbox"]:disabled + .icons, .input-group-addon .radio input.custom-radio[type="radio"]:disabled + .icons, .input-group-addon .checkbox input.custom-radio[type="radio"]:disabled + .icons {
+    color: rgba(230, 232, 234, 0.6);
+}
+.input-group-addon .radio input.custom-checkbox[type="checkbox"]:disabled:checked + .icons, .input-group-addon .checkbox input.custom-checkbox[type="checkbox"]:disabled:checked + .icons, .input-group-addon .radio input.custom-radio[type="radio"]:disabled:checked + .icons, .input-group-addon .checkbox input.custom-radio[type="radio"]:disabled:checked + .icons {
+    color: rgba(230, 232, 234, 0.6);
+}
+.input-group-addon .radio input.custom-checkbox[type="checkbox"]:disabled:checked + .icons .icon-checked, .input-group-addon .checkbox input.custom-checkbox[type="checkbox"]:disabled:checked + .icons .icon-checked, .input-group-addon .radio input.custom-radio[type="radio"]:disabled:checked + .icons .icon-checked, .input-group-addon .checkbox input.custom-radio[type="radio"]:disabled:checked + .icons .icon-checked {
+    color: rgba(230, 232, 234, 0.6);
+}
+.radio + .radio, .checkbox + .checkbox {
+    margin-top: 10px;
+}
+.form-inline .checkbox, .form-inline .radio {
+    padding-left: 32px;
+}
