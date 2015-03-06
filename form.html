@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/radio-checkbox.css" type="text/css" media="screen" />
 
 </head>
 <body >   
@@ -52,7 +53,7 @@
 		            	<div class="row">
 		                	<ul class="list-unstyled form-stepper text-center upper clearfix">
 			                	<li class="col-md-3">
-			                		<a href="http://hirespace.github.io/rfp/index.html" class="complete">
+			                		<a href="/index.html" class="complete">
 			                			<div class="form-counter">1</div>
 			                			Event Type
 			                		</a>
@@ -81,8 +82,8 @@
 		                <h2 class="top-med-margin bottom-sm-margin">Let us know about your conference</h2>
 
 		                <form class="form-pretty">
-		                	<div class="row" style="min-height: 95px;">
-			                	<div class="bottom-sm-margin col-md-6">
+		                	<div class="row">
+			                	<div class="bottom-med-margin col-md-6">
 				                	<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-1" />
 										<label class="input__label input__label--juro" for="input-1">
@@ -92,7 +93,7 @@
 								</div>
 
 								
-								<div class="bottom-sm-margin col-md-6">
+								<div class="bottom-med-margin col-md-6">
 									<span class="input input--juro" style="width: 190px;">
 										<input class="input__field input__field--juro" type="text" id="input-2" />
 										<label class="input__label input__label--juro" for="input-2">
@@ -102,8 +103,8 @@
 								</div>
 							</div>
 
-							<div class="row" style="min-height: 95px;">
-								<div class="bottom-sm-margin col-md-6">
+							<div class="row">
+								<div class="bottom-med-margin col-md-6">
 									<select class="cs-select cs-skin-elastic">
 										<option selected="" disabled="" value="">Style</option>
 										<option value="any">Any</option>
@@ -116,7 +117,7 @@
 									</select>
 								</div>
 
-								<div class="bottom-sm-margin col-md-6">
+								<div class="bottom-med-margin col-md-6">
 									<select class="cs-select cs-skin-elastic">
 										<option selected="" disabled="" value="">Layout</option>
 										<option value="any">Any</option>
@@ -129,8 +130,8 @@
 								</div>
 							</div>
 
-							<div class="row" style="min-height: 95px;">
-								<div class="bottom-sm-margin col-md-6">
+							<div class="row">
+								<div class="bottom-med-margin col-md-6">
 									<select class="cs-select cs-skin-elastic">
 										<option selected="" disabled="" value="">City</option>
 										<option value="birmingham">Birmingham</option>
@@ -140,7 +141,7 @@
 									</select>
 								</div>
 
-								<div class="bottom-sm-margin col-md-6">
+								<div class="bottom-med-margin col-md-6">
 									<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-3" />
 										<label class="input__label input__label--juro" for="input-3">
@@ -150,8 +151,8 @@
 								</div>
 							</div>
 
-							<div class="row" style="min-height: 95px;">
-								<div class="bottom-sm-margin col-md-6">
+							<div class="row">
+								<div class="bottom-med-margin col-md-6">
 									<span class="input input--juro" style="width: 200px;">
 										<input class="input__field input__field--juro" type="text" id="input-4" />
 										<label class="input__label input__label--juro" for="input-4">
@@ -159,9 +160,36 @@
 										</label>
 									</span>
 								</div>
+
+								<div class="bottom-med-margin col-md-6">
+									<label class="radio">
+							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Total budget
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Package per person
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios3" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Venue hire only
+							         </label>
+							    </div>
 							</div>
 
-							<a href="" class="btn btn-success btn-lg upper">Next <span class="awe awe-angle-right"></span></a> 
+							<a href="/form2.html" class="btn btn-success btn-lg upper">Next <span class="awe awe-angle-right"></span></a> 
 
 		                </form>
 		             </div>
@@ -309,6 +337,13 @@
 	                </form> -->
 	            </div>
 	            <div class="col-xs-12 col-sm-4 col-md-4">
+	            	<div class="inverse-section small-padd bottom-med-margin">
+	            		<ul class="fancy-list">
+	                		<li>Receive hand-picked venue options, for free.</li>
+							<li>An expert will be in touch within an hour. <a class="info-popover" href="" data-toggle="popover" title="Working hours" data-content="Within working hours 9am-6pm Monday-Friday, 1pm-5pm Saturday"><span class="sr-only">Opening hours</span><span class="glyphicon glyphicon-info-sign"></span></a></li>
+							<li>For more bespoke briefs, a full proposal within 24 hrs.</li>
+	                	</ul>
+	            	</div>
 		            <div class="inverse-section small-padd">
 		            	<div class="quoterooni text-center bottom-med-margin" style="">
 		            		<img style="margin-bottom: 20px;" class="img-responsive" src="img/excel-london.jpg" />
