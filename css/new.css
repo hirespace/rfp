@@ -4,3 +4,178 @@
 label {
 	margin: 0;
 }
+.quoterooni:after {
+	margin: 40px 20% 40px 20%;
+	display: block;
+	content: "";
+	border-bottom:solid 2px #cfcfcf;
+}
+.quoterooni .h4 {
+	color: #939699;
+}
+.fancy-list li {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 5px;
+}
+
+.info-popover {
+	color: #535584;
+	font-size: 18px;
+}
+.info-popover:hover,
+.info-popover:active,
+.info-popover:focus {
+	color: #7375a4;
+}
+/* Popovers */
+.popover {
+    width: 300px;
+    border-radius: 0;
+    border: 3px solid #bcbcbc;
+    box-shadow: none;
+    padding: 0;
+    font-size: 14px;
+}
+.popover .popover-title {
+    border-radius: 0;
+    color: #434574;
+    background-color: #fff;
+    padding: 14px 14px 4px 14px;
+    border: none;
+    font-size: 18px;
+}
+
+.popover.right .arrow {
+    border-right-color: #bcbcbc;
+}
+.popover.right .arrow:after {
+    left: 4px;
+}
+
+.popover.left .arrow {
+    border-left-color: #bcbcbc;
+}
+.popover.left .arrow:after {
+    right: 4px;
+}
+
+.popover.top .arrow {
+    border-top-color: #bcbcbc;
+}
+.popover.top .arrow:after {
+    bottom: 4px;
+}
+
+.popover.bottom .arrow {
+    border-bottom-color: #bcbcbc;
+}
+.popover.bottom .arrow:after {
+    top: 4px;
+}
+
+.rfp-category-list .categorytile {
+  height: 150px;
+}
+.categorytile1 {
+    background:transparent url('https://hirespace.com/img/homepage/conferences.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile2 {
+    background:transparent url('https://hirespace.com/img/homepage/weddings.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile3 {
+    background:transparent url('https://hirespace.com/img/homepage/unusual.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile4 {
+    background:transparent url('https://hirespace.com/img/homepage/private-dining.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile5 {
+    background:transparent url('https://hirespace.com/img/homepage/meetings.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile6 {
+    background:transparent url('https://hirespace.com/img/homepage/summer-parties.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile7 {
+    background:transparent url('https://hirespace.com/img/homepage/parties.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile8 {
+    background:transparent url('https://hirespace.com/img/homepage/london.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile9 {
+    background:transparent url('https://hirespace.com/img/homepage/manchester.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile10 {
+    background:transparent url('https://hirespace.com/img/homepage/liverpool.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile11 {
+    background:transparent url('https://hirespace.com/img/homepage/birmingham.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile12 {
+    background:transparent url('https://hirespace.com/img/homepage/works.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile13 {
+    background:transparent url('https://hirespace.com/img/homepage/list-venue.jpg') no-repeat center center;
+    background-size: cover;
+}
+.categorytile14 {
+    background:transparent url('https://hirespace.com/img/homepage/ask-expert.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.form-stepper {
+	font-size: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	margin-top: 40px;
+}
+
+.form-stepper a,
+.form-stepper .like-link
+ {
+	color: #525252;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-bottom: 5px;
+}
+
+.form-stepper .form-counter {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+	margin: 0 auto 6px auto;
+	background-color: #aac29a;
+	color: #fff;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-stepper a:hover {
+	text-decoration: none;
+}
+
+.form-stepper .active {
+	border-bottom: solid 3px #a2a2a2;
+}
+
+.form-stepper .complete .form-counter,
+.form-stepper .active .form-counter
+ {
+	background-color: #4e833c;
+}
+
+.form-stepper a:hover .form-counter {
+	background-color: #346529;
+}

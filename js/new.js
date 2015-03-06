@@ -116,13 +116,16 @@ if ( typeof define === 'function' && define.amd ) {
 
 
 
-
-
-
-
 (function() {
   [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
     new SelectFx(el);
   } );
 })();
     
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+$('[data-toggle="popover"]').click( function(event){
+  event.preventDefault();
+});
