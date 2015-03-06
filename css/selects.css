@@ -116,7 +116,7 @@ div.cs-skin-elastic {
 
 .cs-skin-elastic > span {
 	background-color: #efefef;
-	border: solid 4px #535584;
+	/*border: solid 4px #535584;*/
 }
 
 .cs-skin-elastic > span::after {

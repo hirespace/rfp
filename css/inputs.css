@@ -62,11 +62,11 @@
 .input__field--juro {
 	position: absolute;
 	z-index: 100;
-	padding: 2.3em 0.75em 0;
+	padding: 1.6em 0.75em 0;
 	width: 100%;
 	background: transparent;
 	color: #535584;
-	font-size: 0.85em;
+	font-size: 0.75em;
 }
 .input__label--juro {
 	padding: 0;
@@ -74,7 +74,6 @@
 	height: 100%;
 	background: #efefef;
 	text-align: left;
-	border: solid 4px #535584;
 }
 .input__label-content--juro {
 	padding: 1em 0.2em 1em 0.3em;
@@ -85,7 +84,7 @@
 	text-rendering: geometricPrecision;
 }
 .input--filled .input__label-content--juro {
-	padding: 1.8em 0.2em 1em 0.3em;
+	padding: 1.8em 0.9em 0.1em 0.9em;
 }
 
 .input__label--juro::before {
@@ -102,9 +101,9 @@
 
 .input__field--juro:focus + .input__label--juro::before,
 .input--filled .input__label--juro::before {
-	border-width: 4px;
 	border-color: #535584;
-	border-top-width: 2em;
+	border-width: 3px;
+	border-top-width: 1.4em;
 }
 
 .input__field--juro:focus + .input__label--juro .input__label-content--juro,
