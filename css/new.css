@@ -12,6 +12,16 @@
 label {
 	margin: 0;
 }
+.list-header:after {
+    margin: 15px 20% 15px 20%;
+    display: block;
+    content: "";
+    border-bottom:solid 2px #cfcfcf;
+}
+.list-header {
+    text-align: center;
+    color: #525252;
+}
 .quoterooni:after {
 	margin: 40px 20% 40px 20%;
 	display: block;
