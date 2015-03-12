@@ -215,13 +215,26 @@
 							    </div>
 
 							    <div class="bottom-med-margin col-md-6">
-									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="input-4" />
-										<label class="input__label input__label--juro" for="input-4">
-											<span class="input__label-content input__label-content--juro">Date</span>
-										</label>
-									</span>
-								    <label for="checkbox2" class="checkbox">
+									<div class="row">
+										<div class="col-md-12" id="toggleDateFrom">
+											<span class="input input--juro">
+												<input class="input__field input__field--juro" type="text" id="input-4" />
+												<label class="input__label input__label--juro" for="input-4">
+													<span class="input__label-content input__label-content--juro">Date</span>
+												</label>
+											</span>
+										</div>
+										<div class="col-md-6 hide" id="toggleDateTo">
+											<span class="input input--juro">
+												<input class="input__field input__field--juro" type="text" id="input-5" />
+												<label class="input__label input__label--juro" for="input-5">
+													<span class="input__label-content input__label-content--juro">To</span>
+												</label>
+											</span>
+										</div>
+									</div>
+
+									<label for="checkbox2" class="checkbox" id="toggleDate">
 						            	<input type="checkbox" data-toggle="checkbox" id="checkbox2" value="" checked="checked" class="custom-checkbox">
 						            	<span class="icons">
 						            		<span class="icon-unchecked"></span>

@@ -129,3 +129,11 @@ $(function () {
 $('[data-toggle="popover"]').click( function(event){
   event.preventDefault();
 });
+
+
+$("#toggleDate").click(function() {
+	debugger;
+	console.log("pk");
+	$("#toggleDateFrom").removeClass("col-md-12").addClass("col-md-6");
+	$("#toggleDateTo").removeClass("hide");
+});
