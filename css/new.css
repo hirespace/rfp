@@ -1,36 +1,42 @@
 @font-face {
-  font-family: 'Flat-UI-Pro-Icons';
-  src: url('../fonts/flat-ui-icons-regular.eot');
-  src: url('../fonts/flat-ui-icons-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/flat-ui-icons-regular.woff') format('woff'), url('../fonts/flat-ui-icons-regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Flat-UI-Pro-Icons';
+	src: url('../fonts/flat-ui-icons-regular.eot');
+	src: url('../fonts/flat-ui-icons-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/flat-ui-icons-regular.woff') format('woff'), url('../fonts/flat-ui-icons-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 .form-pretty {
 	font-size: 22px;
 }
+
 label {
 	margin: 0;
 }
+
 .list-header:after {
-    margin: 15px 20% 15px 20%;
-    display: block;
-    content: "";
-    border-bottom:solid 2px #cfcfcf;
+	margin: 15px 20% 15px 20%;
+	display: block;
+	content: "";
+	border-bottom: solid 2px #cfcfcf;
 }
+
 .list-header {
-    text-align: center;
-    color: #525252;
+	text-align: center;
+	color: #525252;
 }
+
 .quoterooni:after {
 	margin: 40px 20% 40px 20%;
 	display: block;
 	content: "";
-	border-bottom:solid 2px #cfcfcf;
+	border-bottom: solid 2px #cfcfcf;
 }
+
 .quoterooni .h4 {
 	color: #939699;
 }
+
 .fancy-list li {
 	font-size: 18px;
 	line-height: 1.5;
@@ -41,122 +47,145 @@ label {
 	color: #535584;
 	font-size: 18px;
 }
+
 .info-popover:hover,
 .info-popover:active,
 .info-popover:focus {
 	color: #7375a4;
 }
+
 /* Popovers */
 .popover {
-    width: 300px;
-    border-radius: 0;
-    border: 3px solid #bcbcbc;
-    box-shadow: none;
-    padding: 0;
-    font-size: 14px;
+	width: 300px;
+	border-radius: 0;
+	border: 3px solid #bcbcbc;
+	box-shadow: none;
+	padding: 0;
+	font-size: 14px;
 }
+
 .popover .popover-title {
-    border-radius: 0;
-    color: #434574;
-    background-color: #fff;
-    padding: 14px 14px 4px 14px;
-    border: none;
-    font-size: 18px;
+	border-radius: 0;
+	color: #434574;
+	background-color: #fff;
+	padding: 14px 14px 4px 14px;
+	border: none;
+	font-size: 18px;
 }
 
 .popover.right .arrow {
-    border-right-color: #bcbcbc;
+	border-right-color: #bcbcbc;
 }
+
 .popover.right .arrow:after {
-    left: 4px;
+	left: 4px;
 }
 
 .popover.left .arrow {
-    border-left-color: #bcbcbc;
+	border-left-color: #bcbcbc;
 }
+
 .popover.left .arrow:after {
-    right: 4px;
+	right: 4px;
 }
 
 .popover.top .arrow {
-    border-top-color: #bcbcbc;
+	border-top-color: #bcbcbc;
 }
+
 .popover.top .arrow:after {
-    bottom: 4px;
+	bottom: 4px;
 }
 
 .popover.bottom .arrow {
-    border-bottom-color: #bcbcbc;
+	border-bottom-color: #bcbcbc;
 }
+
 .popover.bottom .arrow:after {
-    top: 4px;
+	top: 4px;
 }
 
 .rfp-category-list .categorytile {
-  height: 150px;
+	-webkit-transition: background-size .5s;
+	-moz-transition: background-size .5s;
+	-o-transition: background-size .5s;
+	transition: background-size .5s;
+
+	height: 150px;
+	background: transparent no-repeat center center;
+	background-size: 100% auto;
 }
-.categorytile1 {
-    background:transparent url('https://hirespace.com/img/homepage/conferences.jpg') no-repeat center center;
-    background-size: cover;
+.rfp-category-list .categorytile:hover,
+.rfp-category-list .categorytile:focus {
+	background-size: 107.5% auto;
 }
-.categorytile2 {
-    background:transparent url('https://hirespace.com/img/homepage/weddings.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytext {
+	font-size: 24px;
 }
-.categorytile3 {
-    background:transparent url('https://hirespace.com/img/homepage/unusual.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile1 {
+	background-image: url('https://hirespace.com/img/homepage/conferences.jpg');
 }
-.categorytile4 {
-    background:transparent url('https://hirespace.com/img/homepage/private-dining.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile2 {
+	background-image: url('https://hirespace.com/img/homepage/weddings.jpg');
 }
-.categorytile5 {
-    background:transparent url('https://hirespace.com/img/homepage/meetings.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile3 {
+	background-image: url('https://hirespace.com/img/homepage/unusual.jpg');
 }
-.categorytile6 {
-    background:transparent url('https://hirespace.com/img/homepage/summer-parties.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile4 {
+	background-image: url('https://hirespace.com/img/homepage/private-dining.jpg');
 }
-.categorytile7 {
-    background:transparent url('https://hirespace.com/img/homepage/parties.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile5 {
+	background-image: url('https://hirespace.com/img/homepage/meetings.jpg');
 }
-.categorytile8 {
-    background:transparent url('https://hirespace.com/img/homepage/london.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile6 {
+	background-image: url('https://hirespace.com/img/homepage/summer-parties.jpg');
 }
-.categorytile9 {
-    background:transparent url('https://hirespace.com/img/homepage/manchester.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile7 {
+	background-image: url('https://hirespace.com/img/homepage/parties.jpg');
 }
-.categorytile10 {
-    background:transparent url('https://hirespace.com/img/homepage/liverpool.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile8 {
+	background-image: url('https://hirespace.com/img/homepage/london.jpg');
 }
-.categorytile11 {
-    background:transparent url('https://hirespace.com/img/homepage/birmingham.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile9 {
+	background-image: url('https://hirespace.com/img/homepage/manchester.jpg');
 }
-.categorytile12 {
-    background:transparent url('https://hirespace.com/img/homepage/works.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile10 {
+	background-image: url('https://hirespace.com/img/homepage/liverpool.jpg');
 }
-.categorytile13 {
-    background:transparent url('https://hirespace.com/img/homepage/list-venue.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile11 {
+	background-image: url('https://hirespace.com/img/homepage/birmingham.jpg');
 }
-.categorytile14 {
-    background:transparent url('https://hirespace.com/img/homepage/ask-expert.jpg') no-repeat center center;
-    background-size: cover;
+
+.rfp-category-list .categorytile12 {
+	background:url('https://hirespace.com/img/homepage/works.jpg');
+}
+
+.rfp-category-list .categorytile13 {
+	background-image: url('https://hirespace.com/img/homepage/list-venue.jpg');
+}
+
+.rfp-category-list .categorytile14 {
+	background-image: url('https://hirespace.com/img/homepage/ask-expert.jpg');
 }
 
 .btn-lg {
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.33;
 }
+
 .btn-lg .awe {
 	font-size: 23px;
 	position: relative;
@@ -172,8 +201,7 @@ label {
 }
 
 .form-stepper a,
-.form-stepper .like-link
- {
+.form-stepper .like-link {
 	color: #525252;
 	font-weight: bold;
 	font-size: 16px;
@@ -201,8 +229,7 @@ label {
 }
 
 .form-stepper .complete .form-counter,
-.form-stepper .active .form-counter
- {
+.form-stepper .active .form-counter {
 	background-color: #4e833c;
 }
 
