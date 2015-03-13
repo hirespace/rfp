@@ -131,9 +131,15 @@ $('[data-toggle="popover"]').click( function(event){
 });
 
 
-$("#toggleDate").click(function() {
-	debugger;
-	console.log("ok");
-	$("#toggleDateFrom").removeClass("col-md-12").addClass("col-md-6");
-	$("#toggleDateTo").removeClass("hide");
+$("#toggleDate").click(function(e) {
+	e.preventDefault();
+
+	var checkbox = $(this).find("input");
+	var isChecked = checkbox.attr("checked") == "checked" ? true : false;
+
+	// Finding this out is a real kerfuffle
+	isChecked ? checkbox.attr("checked", false) : checkbox.attr("checked", "checked");
+
+	$("#toggleDateFrom").toggleClass("col-md-12").toggleClass("col-md-6");
+	$("#toggleDateTo").toggleClass("hide");
 });
