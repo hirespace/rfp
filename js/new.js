@@ -137,9 +137,18 @@ $("#toggleDate").click(function(e) {
 	var checkbox = $(this).find("input");
 	var isChecked = checkbox.attr("checked") == "checked" ? true : false;
 
-	// Finding this out is a real kerfuffle
-	isChecked ? checkbox.attr("checked", false) : checkbox.attr("checked", "checked");
+	// Finding this out is a real kerfuffle and even then it is not correct
+	isChecked ? checkbox.attr("checked", false) : checkbox.attr("checked", true);
 
-	$("#toggleDateFrom").toggleClass("col-md-12").toggleClass("col-md-6");
+	$("#toggleDateFrom").toggleClass("col-md-12").toggleClass("col-md-6").find(".input__label-content").text(isChecked ? "From" : "Date");
 	$("#toggleDateTo").toggleClass("hide");
 });
+
+var contactPreferenceUpdateSelector = $("#contactPreference .cs-options").find("li");
+
+contactPreferenceUpdateSelector.click(function() {
+	var value = $(this).find("span").text();
+
+	$("#contactPreferenceValue").removeClass("hide").find(".input__label-content").text(value);
+});
+
