@@ -181,7 +181,6 @@ label {
 }
 
 .btn-lg {
-	padding: 10px 16px;
 	font-size: 18px;
 	line-height: 1.33;
 }
@@ -235,4 +234,9 @@ label {
 
 .form-stepper a:hover .form-counter {
 	background-color: #346529;
+}
+
+section .btn-lg, form .btn-lg {
+	padding: 11px 15px 8px 15px;
+	font-weight: bold;
 }
