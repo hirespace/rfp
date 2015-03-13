@@ -10,7 +10,7 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
+
     <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/radio-checkbox.css" type="text/css" media="screen" />
@@ -114,59 +114,21 @@
 		                	<div class="row">
 
 		                		<div class="bottom-med-margin col-md-6">
-		                			<p class="like-label">Catering provided by</p>
-									<label class="radio">
-							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsCatering" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            None
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsCatering" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Venue
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios3" name="optionsCatering" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Caterer
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios4" name="optionsCatering" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Bring your own
-							         </label>
+									<select class="cs-select cs-skin-elastic">
+										<option selected="" disabled="" value="">Catering provided by</option>
+										<option value="no">None</option>
+										<option value="yes">Venue</option>
+										<option value="yes">Caterer</option>
+										<option value="yes">Bring your own</option>
+									</select>
 							    </div>
 
 		                		<div class="bottom-med-margin col-md-6">
-		                			<p class="like-label">Audio / Visual required</p>
-									<label class="radio">
-							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsAV" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            No A/V required
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsAV" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            A/V required
-							         </label>
+									<select class="cs-select cs-skin-elastic">
+										<option selected="" disabled="" value="">Audio / Visual</option>
+										<option value="no">No A/V required</option>
+										<option value="yes">A/V required</option>
+									</select>
 							    </div>
 
 							</div>
@@ -174,48 +136,31 @@
 		                	<div class="row">
 
 		                		<div class="bottom-med-margin col-md-6">
-		                			<p class="like-label">Accommodation needed</p>
-									<label class="radio">
-							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsAccommodation" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            No accommodation required
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsAccommodation" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Accommodation required
-							         </label>
+									<select class="cs-select cs-skin-elastic">
+										<option selected="" disabled="" value="">Accommodation</option>
+										<option value="no">No accommodation required</option>
+										<option value="yes">Accommodation required</option>
+									</select>
 							    </div>
 
 		                		<div class="bottom-med-margin col-md-6">
-		                			<p class="like-label">Breakout rooms required</p>
-									<label class="radio">
-							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsBreakout" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            No breakout rooms required
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsBreakout" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Breakout rooms required
-							         </label>
+									<select class="cs-select cs-skin-elastic">
+										<option selected="" disabled="" value="">Breakout rooms</option>
+										<option value="no">No breakout rooms required</option>
+										<option value="yes">Breakout rooms required</option>
+									</select>
 							    </div>
 
 							</div>
 
-							<a href="/rfp/form3.html" class="btn btn-success btn-lg upper">Next <span class="awe awe-angle-right"></span></a> 
+							<div class="row">
+								<div class="col-md-6">
+									<a href="form.html" class="btn btn-lg upper top-sm-margin"><span class="awe awe-angle-left" style="left: -4px"></span>Back</a>
+								</div>
+								<div class="col-md-6 text-right">
+									<a href="form3.html" class="btn btn-success btn-lg upper top-sm-margin">Next <span class="awe awe-angle-right"></span></a>
+								</div>
+							</div>
 
 		                </form>
 		             </div>

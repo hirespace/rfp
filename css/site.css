@@ -1,3 +1,6 @@
+@import "helpers.css";
+@import "new.css";
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
