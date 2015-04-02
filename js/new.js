@@ -117,11 +117,11 @@ if ( typeof define === 'function' && define.amd ) {
 
 
 (function() {
-  [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+  [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
     new SelectFx(el);
   } );
 })();
-    
+
 $(function () {
   $('[data-toggle="popover"]').popover()
 });
@@ -129,3 +129,26 @@ $(function () {
 $('[data-toggle="popover"]').click( function(event){
   event.preventDefault();
 });
+
+
+$("#toggleDate").click(function(e) {
+	e.preventDefault();
+
+	var checkbox = $(this).find("input");
+	var isChecked = checkbox.attr("checked") == "checked" ? true : false;
+
+	// Finding this out is a real kerfuffle and even then it is not correct
+	isChecked ? checkbox.attr("checked", false) : checkbox.attr("checked", true);
+
+	$("#toggleDateFrom").toggleClass("col-md-12").toggleClass("col-md-6").find(".input__label-content").text(isChecked ? "From" : "Date");
+	$("#toggleDateTo").toggleClass("hide");
+});
+
+var contactPreferenceUpdateSelector = $("#contactPreference .cs-options").find("li");
+
+contactPreferenceUpdateSelector.click(function() {
+	var value = $(this).find("span").text();
+
+	$("#contactPreferenceValue").removeClass("hide").find(".input__label-content").text(value);
+});
+
