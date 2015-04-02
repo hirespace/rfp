@@ -10,7 +10,7 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
-
+    <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/radio-checkbox.css" type="text/css" media="screen" />
@@ -114,21 +114,59 @@
 		                	<div class="row">
 
 		                		<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">Catering provided by</option>
-										<option value="no">None</option>
-										<option value="yes">Venue</option>
-										<option value="yes">Caterer</option>
-										<option value="yes">Bring your own</option>
-									</select>
+		                			<p class="like-label">Catering provided by</p>
+									<label class="radio">
+							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsCatering" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            None
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsCatering" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Venue
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios3" name="optionsCatering" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Caterer
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios4" name="optionsCatering" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Bring your own
+							         </label>
 							    </div>
 
 		                		<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">Audio / Visual</option>
-										<option value="no">No A/V required</option>
-										<option value="yes">A/V required</option>
-									</select>
+		                			<p class="like-label">Audio / Visual required</p>
+									<label class="radio">
+							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsAV" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            No A/V required
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsAV" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            A/V required
+							         </label>
 							    </div>
 
 							</div>
@@ -136,31 +174,48 @@
 		                	<div class="row">
 
 		                		<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">Accommodation</option>
-										<option value="no">No accommodation required</option>
-										<option value="yes">Accommodation required</option>
-									</select>
+		                			<p class="like-label">Accommodation needed</p>
+									<label class="radio">
+							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsAccommodation" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            No accommodation required
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsAccommodation" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Accommodation required
+							         </label>
 							    </div>
 
 		                		<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">Breakout rooms</option>
-										<option value="no">No breakout rooms required</option>
-										<option value="yes">Breakout rooms required</option>
-									</select>
+		                			<p class="like-label">Breakout rooms required</p>
+									<label class="radio">
+							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsBreakout" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            No breakout rooms required
+							         </label>
+							         <label class="radio">
+							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsBreakout" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Breakout rooms required
+							         </label>
 							    </div>
 
 							</div>
 
-							<div class="row">
-								<div class="col-md-6">
-									<a href="form.html" class="btn btn-lg upper top-sm-margin"><span class="awe awe-angle-left" style="left: -4px"></span>Back</a>
-								</div>
-								<div class="col-md-6 text-right">
-									<a href="form3.html" class="btn btn-success btn-lg upper top-sm-margin">Next <span class="awe awe-angle-right"></span></a>
-								</div>
-							</div>
+							<a href="/rfp/form3.html" class="btn btn-success btn-lg upper">Next <span class="awe awe-angle-right"></span></a> 
 
 		                </form>
 		             </div>
@@ -171,35 +226,30 @@
 	                    <div class="form-group">
 	                        <em class="h5 no-margin col-md-12">Fields marked with an asterisk (*) are required.</em>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerName">Contact Name*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="text" id="customerName" class="form-control" name="customerName" required placeholder="What should we call you?" />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerEmail">Contact Email*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="email" id="customerEmail" class="form-control" name="customerEmail" required placeholder="Your email" />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">                        
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerPhone">Contact Phone Number*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="tel" id="customerPhone" class="form-control" name="customerPhone" required placeholder="Your phone number" />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="eventType">Event Type*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="text" id="eventType" class="form-control" name="eventType" required placeholder="e.g. Christmas Party, Wedding, AGM." />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="startDate">Start Date and Time*</label>
 	                        <div class="col-xs-6 col-sm-4 col-md-3">
@@ -220,7 +270,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="city">City*</label>
 	                        <div class="col-xs-12 col-sm-4 col-md-3">
@@ -230,18 +279,15 @@
 	                                        <option value="Manchester">Manchester</option>
 	                                        <option value="Liverpool">Liverpool</option>
 	                                        <option value="Birmingham">Birmingham</option>
-
 	                            </select>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="location">Location*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="text" id="location" class="form-control" name="location" required placeholder="e.g. West End, City." />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="budget">Budget*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
@@ -251,7 +297,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="numberGuests">Number of guests and layout type</label>
 	                        <div class="col-xs-4 col-sm-4 col-md-2">
@@ -279,7 +324,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="catering">Catering</label>
 	                        <div class="col-xs-12 col-sm-4 col-md-3">
@@ -290,21 +334,18 @@
 	                            </select>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="additionalInfo">Anything else we need to know</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <textarea id="additionalInfo" rows="5" name="additionalInfo" class="form-control" placeholder="E.g. Breakout spaces? Style of Venue? Outdoor space? Parking?"></textarea>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <div class="col-md-12">
 	                            <input type="text" class="hidden" name="forged" />
 	                            <input type="submit" value="Send request" class="btn btn-primary btn-large pull-right" />
 	                        </div>
 	                    </div>
-
 	                </form> -->
 	            </div>
 	        </div>
@@ -323,7 +364,6 @@
 		            <div class="col-xs-12 col-sm-4 col-md-4">
 		                <a href="mailto:enquire@hirespace.com" class="btn btn-block btn-purple"><span class="awe-envelope"></span>&nbsp;enquire@hirespace.com</a>
 		            </div>
-
 		            <div class="col-xs-12 col-sm-4 col-md-4">
 		                <a id="js-gold-contact-google-phone" href="tel:0203 397 8853" class="btn btn-block btn-purple"><span class="awe-phone"></span>&nbsp;0203 397 8853</a>
 		            </div>

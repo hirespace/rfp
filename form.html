@@ -185,19 +185,19 @@
 							    <div class="bottom-med-margin col-md-8">
 							    	<div class="row">
 								    	<div class="col-md-6">
-											<span class="input input--juro">
-												<input class="input__field input__field--juro" type="text" id="input-4" />
+											<span class="input input--juro"  id="startDate">
+												<input class="input__field input__field--juro" type="text" />
 												<label class="input__label input__label--juro" for="input-4">
 													<span class="input__label-content input__label-content--juro">Date</span>
 												</label>
 											</span>
-										    <label for="checkbox2" class="checkbox">
-								            	<input type="checkbox" data-toggle="checkbox" id="checkbox2" value="" class="custom-checkbox">
+										    <label for="checkbox2" class="checkbox"  id="toggleAllDay" >
+								            	<input type="checkbox" data-toggle="checkbox" value="" class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
 								            		<span class="icon-checked"></span>
 								            	</span>
-									            All day
+									            Multi-day
 									        </label>
 										    <label for="checkbox3" class="checkbox">
 								            	<input type="checkbox" data-toggle="checkbox" id="checkbox3" value="" class="custom-checkbox">
@@ -216,7 +216,7 @@
 									            Flexible
 									        </label>
 								       	</div>
-								       	<div class="col-md-6">
+								       	<div class="col-md-6" id="toggleTimes">
 								       		<div class="row">
 								       			<div class="col-md-6">
 													<span class="input input--juro">
@@ -235,6 +235,14 @@
 													</span>
 								       			</div>
 								       		</div>
+								       	</div>
+										<div class="col-md-6 hide" id="toggleEndDate">
+								       		<span class="input input--juro">
+												<input class="input__field input__field--juro" type="text" id="endDate" />
+												<label class="input__label input__label--juro" for="input-4">
+													<span class="input__label-content input__label-content--juro">End Date</span>
+												</label>
+											</span>
 								       	</div>
 								    </div>
 							    </div>

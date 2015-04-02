@@ -10,7 +10,7 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
-
+    <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/radio-checkbox.css" type="text/css" media="screen" />
@@ -94,10 +94,10 @@
 			                		</a>
 			                	</li>
 			                	<li class="col-md-3">
-									<a href="/form2.html" class="complete">
+			                		<span class="like-link complete">
 			                			<div class="form-counter">3</div>
 			                			Extras
-			                		</a>
+			                		</span>
 			                	</li>
 			                	<li class="col-md-3">
 			                		<span class="like-link active">
@@ -112,52 +112,83 @@
 
 		                <form class="form-pretty">
 		                	<div class="row">
-								<div class="col-md-6 bottom-med-margin">
-									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="input-1" />
-										<label class="input__label input__label--juro" for="input-1">
-											<span class="input__label-content input__label-content--juro">Name</span>
-										</label>
-									</span>
-								</div>
 
-								<div class="col-md-6 bottom-med-margin">
-									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="input-2" />
-										<label class="input__label input__label--juro" for="input-2">
-											<span class="input__label-content input__label-content--juro">Company</span>
-										</label>
-									</span>
+		                		<div class="col-md-6">
+
+				                	<div class="bottom-med-margin">
+					                	<span class="input input--juro">
+											<input class="input__field input__field--juro" type="text" id="input-1" />
+											<label class="input__label input__label--juro" for="input-1">
+												<span class="input__label-content input__label-content--juro">Name</span>
+											</label>
+										</span>
+									</div>
+
+									
+									<div class="bottom-med-margin">
+										<span class="input input--juro">
+											<input class="input__field input__field--juro" type="text" id="input-2" />
+											<label class="input__label input__label--juro" for="input-2">
+												<span class="input__label-content input__label-content--juro">Company</span>
+											</label>
+										</span>
+									</div>
+
 								</div>
 							</div>
 
 							<div class="row">
-									<div class="col-md-6 bottom-med-margin" id="contactPreference">
-										<select class="cs-select cs-skin-elastic">
-											<option selected="" disabled="" value="">Contact preference</option>
-											<option value="no">Email</option>
-											<option value="yes">Phone</option>
-										</select>
+
+								<div class="col-md-6">
+
+									<div class="bottom-med-margin">
+										<span class="input input--juro">
+											<input class="input__field input__field--juro" type="tel" id="input-2" />
+											<label class="input__label input__label--juro" for="input-2">
+												<span class="input__label-content input__label-content--juro">Phone</span>
+											</label>
+										</span>
 									</div>
 
-				                	<div class="col-md-6 bottom-med-margin">
-					                	<span class="input input--juro hide" id="contactPreferenceValue">
+				                	<div class="bottom-med-margin">
+					                	<span class="input input--juro">
 											<input class="input__field input__field--juro" type="email" id="input-1" />
 											<label class="input__label input__label--juro" for="input-1">
 												<span class="input__label-content input__label-content--juro">Email</span>
 											</label>
 										</span>
 									</div>
+
+								</div>
+
+		                		<div class="bottom-med-margin col-md-6">
+
+		                			<p class="like-label">How should we contact you?</p>
+							        
+							        <label class="radio">
+							            <input type="radio"  checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Phone
+							        </label>
+									
+									<label class="radio">
+							            <input type="radio" data-toggle="radio" value="option2" id="optionsRadios2" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+							            Email
+							         </label>
+
+							    </div>
+
 							</div>
 
-							<div class="row">
-								<div class="col-md-6">
-									<a href="index2.html" class="btn btn-lg upper top-sm-margin"><span class="awe awe-angle-left" style="left: -4px"></span>Back</a>
-								</div>
-								<div class="col-md-6 text-right">
-									<a href="confirmation.html" class="btn btn-success btn-lg upper top-sm-margin">Submit!</a>
-								</div>
-							</div>
+
+							<a href="/rfp/form4.html" class="btn btn-success btn-lg upper">Submit <span class="awe awe-angle-right"></span></a> 
 
 		                </form>
 		             </div>
@@ -168,35 +199,30 @@
 	                    <div class="form-group">
 	                        <em class="h5 no-margin col-md-12">Fields marked with an asterisk (*) are required.</em>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerName">Contact Name*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="text" id="customerName" class="form-control" name="customerName" required placeholder="What should we call you?" />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerEmail">Contact Email*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="email" id="customerEmail" class="form-control" name="customerEmail" required placeholder="Your email" />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">                        
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="customerPhone">Contact Phone Number*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="tel" id="customerPhone" class="form-control" name="customerPhone" required placeholder="Your phone number" />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="eventType">Event Type*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="text" id="eventType" class="form-control" name="eventType" required placeholder="e.g. Christmas Party, Wedding, AGM." />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="startDate">Start Date and Time*</label>
 	                        <div class="col-xs-6 col-sm-4 col-md-3">
@@ -217,7 +243,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="city">City*</label>
 	                        <div class="col-xs-12 col-sm-4 col-md-3">
@@ -227,18 +252,15 @@
 	                                        <option value="Manchester">Manchester</option>
 	                                        <option value="Liverpool">Liverpool</option>
 	                                        <option value="Birmingham">Birmingham</option>
-
 	                            </select>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="location">Location*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <input type="text" id="location" class="form-control" name="location" required placeholder="e.g. West End, City." />
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="budget">Budget*</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
@@ -248,7 +270,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="numberGuests">Number of guests and layout type</label>
 	                        <div class="col-xs-4 col-sm-4 col-md-2">
@@ -276,7 +297,6 @@
 	                            </div>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="catering">Catering</label>
 	                        <div class="col-xs-12 col-sm-4 col-md-3">
@@ -287,21 +307,18 @@
 	                            </select>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <label class="col-xs-12 col-sm-12 col-md-4 control-label" for="additionalInfo">Anything else we need to know</label>
 	                        <div class="col-xs-12 col-sm-8 col-md-6">
 	                            <textarea id="additionalInfo" rows="5" name="additionalInfo" class="form-control" placeholder="E.g. Breakout spaces? Style of Venue? Outdoor space? Parking?"></textarea>
 	                        </div>
 	                    </div>
-
 	                    <div class="form-group">
 	                        <div class="col-md-12">
 	                            <input type="text" class="hidden" name="forged" />
 	                            <input type="submit" value="Send request" class="btn btn-primary btn-large pull-right" />
 	                        </div>
 	                    </div>
-
 	                </form> -->
 	            </div>
 	        </div>
@@ -320,7 +337,6 @@
 		            <div class="col-xs-12 col-sm-4 col-md-4">
 		                <a href="mailto:enquire@hirespace.com" class="btn btn-block btn-purple"><span class="awe-envelope"></span>&nbsp;enquire@hirespace.com</a>
 		            </div>
-
 		            <div class="col-xs-12 col-sm-4 col-md-4">
 		                <a id="js-gold-contact-google-phone" href="tel:0203 397 8853" class="btn btn-block btn-purple"><span class="awe-phone"></span>&nbsp;0203 397 8853</a>
 		            </div>

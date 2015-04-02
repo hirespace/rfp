@@ -131,7 +131,7 @@ $('[data-toggle="popover"]').click( function(event){
 });
 
 
-$("#toggleDate").click(function(e) {
+$("#toggleAllDay").click(function(e) {
 	e.preventDefault();
 
 	var checkbox = $(this).find("input");
@@ -140,8 +140,10 @@ $("#toggleDate").click(function(e) {
 	// Finding this out is a real kerfuffle and even then it is not correct
 	isChecked ? checkbox.attr("checked", false) : checkbox.attr("checked", true);
 
-	$("#toggleDateFrom").toggleClass("col-md-12").toggleClass("col-md-6").find(".input__label-content").text(isChecked ? "From" : "Date");
-	$("#toggleDateTo").toggleClass("hide");
+	$("#toggleAllDay").find(".input__label-content").text(isChecked ? "From" : "Date");
+  $("#startDate").find(".input__label-content.input__label-content--juro").text(isChecked ? "Date" : "Start Date");
+	$("#toggleTimes").toggleClass("hide");
+  $("#toggleEndDate").toggleClass("hide");
 });
 
 var contactPreferenceUpdateSelector = $("#contactPreference .cs-options").find("li");
