@@ -9,14 +9,21 @@
     <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/textarea.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/cs-skin-border.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/radio-checkbox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/default.date.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/default.time.css" type="text/css" media="screen" />
 
 </head>
-<body >   
+<body >
+
     <header id="header" class="clearfix">
         <nav class="navbar navbar-default">
           <div class="container-fluid">
@@ -50,7 +57,7 @@
 	        <div class="row">
 
 	        	<!-- Sidebar with quotes -->
-	            <div class="col-xs-12 col-sm-4 col-md-4">
+	            <div class="col-xs-12 col-sm-4 col-md-4 hide">
 <!-- 	            	<div class="inverse-section small-padd bottom-med-margin">
 	            		<h1 class="list-header">Ask an expert</h1>
 	            		<ul class="fancy-list">
@@ -77,38 +84,38 @@
 	            </div>
 
 	            <!-- Ask An Expert Form -->
-	            <div class="col-xs-12 col-sm-8 col-md-8">
+	            <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
 	            	<div class="inverse-section small-padd">
 		            	<div class="row">
 		                	<ul class="list-unstyled form-stepper text-center upper clearfix">
 			                	<li class="col-md-3">
-			                		<a href="/index.html" class="complete">
-			                			<div class="form-counter">1</div>
-			                			Event Type
+			                		<a href="index.html" class="complete">
+<!-- 			                			<div class="form-counter">1</div>
+ -->			                			1. Event Type <span class="glyphicon glyphicon-ok"></span>
 			                		</a>
 			                	</li>
 			                	<li class="col-md-3">
 			                		<span class="like-link active">
-			                			<div class="form-counter">2</div>
-			                			Details
+<!-- 			                			<div class="form-counter">2</div>
+ -->			                			2. Details
 			                		</span>
 			                	</li>
 			                	<li class="col-md-3">
 			                		<span class="like-link">
-			                			<div class="form-counter">3</div>
-			                			Extras
+<!-- 			                			<div class="form-counter">3</div>
+ -->			                			3. Extras
 			                		</span>
 			                	</li>
 			                	<li class="col-md-3">
 			                		<span class="like-link">
-			                			<div class="form-counter">4</div>
-			                			Contact Info
+<!-- 			                			<div class="form-counter">4</div>
+ -->			                			4. Contact Info
 			                		</span>
 			                	</li>
 		                	</ul>
 		                </div>
 
-		                <h2 class="top-med-margin bottom-sm-margin">Let us know about your conference</h2>
+		                <h2 class="top-med-margin bottom-med-margin text-center">Let us know about your conference</h2>
 
 		                <form class="form-pretty">
 		                	<div class="row">
@@ -116,17 +123,16 @@
 				                	<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-1" />
 										<label class="input__label input__label--juro" for="input-1">
-											<span class="input__label-content input__label-content--juro">Name of event</span>
+											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-pencil" style="left: -6px; top: -2px; position: relative;"></span>Name of conference</span>
 										</label>
 									</span>
 								</div>
-
 								
 								<div class="bottom-med-margin col-md-6">
 									<span class="input input--juro" style="width: 200px;">
 										<input class="input__field input__field--juro" type="text" id="input-2" />
 										<label class="input__label input__label--juro" for="input-2">
-											<span class="input__label-content input__label-content--juro">Number of guests</span>
+											<span class="input__label-content input__label-content--juro"><span class="awe awe-group" style="left: -5px; top: -3px; position: relative;"></span>Number of guests</span>
 										</label>
 									</span>
 								</div>
@@ -134,8 +140,7 @@
 
 							<div class="row">
 								<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">Style</option>
+									<select class="cs-select cs-skin-border" data-label="Style" data-icon="tag"  data-iconset="glyphicon">
 										<option value="any">Any</option>
 										<option value="traditional">Traditional</option>
 										<option value="modern">Modern</option>
@@ -147,8 +152,7 @@
 								</div>
 
 								<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">Layout</option>
+									<select class="cs-select cs-skin-border" data-label="Layout" data-icon="th"  data-iconset="glyphicon">
 										<option value="any">Any</option>
 										<option value="theatre">Theatre</option>
 										<option value="caberet">Cabaret</option>
@@ -161,8 +165,7 @@
 
 							<div class="row">
 								<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-elastic">
-										<option selected="" disabled="" value="">City</option>
+									<select class="cs-select cs-skin-border" data-label="City" data-icon="university"  data-iconset="fa">
 										<option value="birmingham">Birmingham</option>
 										<option value="liverpool">Liverpool</option>
 										<option value="london">London</option>
@@ -174,7 +177,7 @@
 									<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-3" />
 										<label class="input__label input__label--juro" for="input-3">
-											<span class="input__label-content input__label-content--juro">Area of City</span>
+											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-map-marker" style="left: -6px; top: 1px; position: relative;"></span>Area of City <small>(optional)</small></span>
 										</label>
 									</span>
 								</div>
@@ -186,11 +189,43 @@
 							    	<div class="row">
 								    	<div class="col-md-6">
 											<span class="input input--juro"  id="startDate">
-												<input class="input__field input__field--juro" type="text" />
-												<label class="input__label input__label--juro" for="input-4">
-													<span class="input__label-content input__label-content--juro">Date</span>
+												<input class="input__field input__field--juro" type="date" id="inputStartDate" />
+												<label class="input__label input__label--juro" for="inputStartDate">
+													<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-calendar" style="left: -4px; top: 1px; position: relative;"></span><span id="startDateLabel">Date&nbsp<small>(optional)</small></span></span>
 												</label>
 											</span>
+								       	</div>
+								       	<div class="col-md-6" id="toggleTimes">
+								       		<div class="row">
+								       			<div class="col-md-6">
+													<span class="input input--juro">
+														<input class="input__field input__field--juro" type="time" id="input-4" />
+														<label class="input__label input__label--juro" for="input-4">
+															<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-time" style="left: -4px; top: 1px; position: relative;"></span>Start</span>
+														</label>
+													</span>
+								       			</div>
+								       			<div class="col-md-6">
+													<span class="input input--juro">
+														<input class="input__field input__field--juro" type="time" id="input-4" />
+														<label class="input__label input__label--juro" for="input-4">
+															<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-time" style="left: -4px; top: 1px; position: relative;"></span>Finish</span>
+														</label>
+													</span>
+								       			</div>
+								       		</div>
+								       	</div>
+										<div class="col-md-6 hide" id="toggleEndDate">
+								       		<span class="input input--juro">
+												<input class="input__field input__field--juro" type="date" id="endDate" />
+												<label class="input__label input__label--juro" for="input-4">
+													<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-calendar" style="left: -4px; top: 1px; position: relative;"></span>End Date</span>
+												</label>
+											</span>
+								       	</div>
+								    </div>
+								    <div class="row">
+								    	<div class="col-md-3">
 										    <label for="checkbox2" class="checkbox"  id="toggleAllDay" >
 								            	<input type="checkbox" data-toggle="checkbox" value="" class="custom-checkbox">
 								            	<span class="icons">
@@ -199,51 +234,37 @@
 								            	</span>
 									            Multi-day
 									        </label>
-										    <label for="checkbox3" class="checkbox">
-								            	<input type="checkbox" data-toggle="checkbox" id="checkbox3" value="" class="custom-checkbox">
+										    <label for="repeatCheckbox" class="checkbox">
+								            	<input type="checkbox" data-toggle="checkbox" id="repeatCheckbox" value="" class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
 								            		<span class="icon-checked"></span>
 								            	</span>
 									            Repeat
 									        </label>
-										    <label for="checkbox4" class="checkbox">
-								            	<input type="checkbox" data-toggle="checkbox" id="checkbox4" value="" class="custom-checkbox">
+										    <label for="flexiCheckbox" class="checkbox">
+								            	<input type="checkbox" data-toggle="checkbox" id="flexiCheckbox" value="" class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
 								            		<span class="icon-checked"></span>
 								            	</span>
 									            Flexible
 									        </label>
-								       	</div>
-								       	<div class="col-md-6" id="toggleTimes">
-								       		<div class="row">
-								       			<div class="col-md-6">
-													<span class="input input--juro">
-														<input class="input__field input__field--juro" type="text" id="input-4" />
-														<label class="input__label input__label--juro" for="input-4">
-															<span class="input__label-content input__label-content--juro">Start</span>
-														</label>
-													</span>
-								       			</div>
-								       			<div class="col-md-6">
-													<span class="input input--juro">
-														<input class="input__field input__field--juro" type="text" id="input-4" />
-														<label class="input__label input__label--juro" for="input-4">
-															<span class="input__label-content input__label-content--juro">Finish</span>
-														</label>
-													</span>
-								       			</div>
-								       		</div>
-								       	</div>
-										<div class="col-md-6 hide" id="toggleEndDate">
-								       		<span class="input input--juro">
-												<input class="input__field input__field--juro" type="text" id="endDate" />
+								    	</div>
+								    	<div class="col-md-9">
+											<span class="input input--juro top-med-margin hide"  id="repeatInput">
+												<input class="input__field input__field--juro" type="text" />
 												<label class="input__label input__label--juro" for="input-4">
-													<span class="input__label-content input__label-content--juro">End Date</span>
+													<span class="input__label-content input__label-content--juro">How is your conference repeating?</span>
 												</label>
 											</span>
-								       	</div>
+											<span class="input input--juro top-lg-margin  hide"  id="flexiInput">
+												<input class="input__field input__field--juro" type="text" />
+												<label class="input__label input__label--juro" for="input-4">
+													<span class="input__label-content input__label-content--juro">How flexible are you dates / times?</span>
+												</label>
+											</span>
+								    	</div>
 								    </div>
 							    </div>
 
@@ -251,7 +272,7 @@
 									<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-4" />
 										<label class="input__label input__label--juro" for="input-4">
-											<span class="input__label-content input__label-content--juro">Budget</span>
+											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-gbp" style="left: -4px; top: 1px; position: relative;"></span>Budget&nbsp<small>(optional)</small></span>
 										</label>
 									</span>
 									<label class="radio">
@@ -260,7 +281,7 @@
 							            	<span class="icon-unchecked"></span>
 							            	<span class="icon-checked"></span>
 							            </span>
-							            Total budget
+							            Total conference budget
 							         </label>
 							         <label class="radio">
 							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsRadios" class="custom-radio">
@@ -276,13 +297,19 @@
 							            	<span class="icon-unchecked"></span>
 							            	<span class="icon-checked"></span>
 							            </span>
-							            Venue hire only
+							            Venue hire budget
 							         </label>
 							    </div>
+							</div>
 
 
-								<div class="col-md-12 clearfix" style="border-top: solid 3px #ededed">
-									<a href="/rfp/form2.html" class="btn btn-success btn-lg upper top-sm-margin">Next <span class="awe awe-angle-right"></span></a>
+							<div class="row">
+
+								<div class="col-md-6">
+									<a href="index.html" class="btn btn-lg upper top-sm-margin"><span class="awe awe-angle-left" style="left: -4px"></span>Back</a>
+								</div>
+								<div class="col-md-6 text-right">
+									<a href="form2.html" class="btn btn-success btn-lg upper top-sm-margin">Next <span class="awe awe-angle-right"></span></a>
 								</div>
 
 							</div>
@@ -460,8 +487,8 @@
 	</section> -->
 
     <section>
-	    <footer class="footer top-med-pad">
-	        <div class="content bottom-sm-margin bottom-med-pad">
+	    <footer class="footer top-margin">
+<!-- 	        <div class="content bottom-sm-margin bottom-med-pad">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-sm-3 col-md-3">
@@ -536,8 +563,8 @@
 	                    </div>
 	                </div>
 	            </div>
-	        </div>
-	        <div class="bottom">
+	        </div> -->
+	        <!-- <div class="bottom">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-xs-12 col-sm-6 col-md-4">
@@ -564,11 +591,17 @@
 	                    </div>
 	                </div>
 	            </div>
-	        </div>
+	        </div> -->
 	    </footer>
 	</section>
 
+	<script src="js/modernizr.js"></script>
+	<script src="js/moment.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="js/legacy.js"></script>
+	<script src="js/picker.js"></script>
+	<script src="js/picker.date.js"></script>
+	<script src="js/picker.time.js"></script>
 	<script src="js/tooltip.js"></script>
 	<script src="js/popover.js"></script>
 	<script src="js/selectFX.js"></script>

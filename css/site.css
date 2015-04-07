@@ -8954,6 +8954,9 @@ h2 a.subtle-link {
 .bottom-med-pad {
   padding-bottom: 30px;
 }
+.top-lg-margin {
+  margin-top: 50px;
+}
 .top-margin {
   margin-top: 40px;
 }
@@ -8965,6 +8968,12 @@ h2 a.subtle-link {
 }
 .top-tiny-margin {
   margin-top: 10px;
+}
+.bottom-lg-margin {
+  margin-top: 50px;
+}
+.bottom-margin {
+  margin-top: 40px;
 }
 .bottom-med-margin {
   margin-bottom: 30px;

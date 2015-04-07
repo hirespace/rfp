@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/new.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/inputs.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/textarea.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/selects.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/radio-checkbox.css" type="text/css" media="screen" />
 
@@ -50,7 +51,7 @@
 	        <div class="row">
 
 	        	<!-- Sidebar with quotes -->
-	            <div class="col-xs-12 col-sm-4 col-md-4">
+	            <div class="col-xs-12 col-sm-4 col-md-4 hide">
 <!-- 	            	<div class="inverse-section small-padd bottom-med-margin">
 	            		<h1 class="list-header">Ask an expert</h1>
 	            		<ul class="fancy-list">
@@ -77,38 +78,38 @@
 	            </div>
 
 	            <!-- Ask An Expert Form -->
-	            <div class="col-xs-12 col-sm-8 col-md-8">
+	            <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
 	            	<div class="inverse-section small-padd">
 		            	<div class="row">
 		                	<ul class="list-unstyled form-stepper text-center upper clearfix">
 			                	<li class="col-md-3">
-			                		<a href="/index.html" class="complete">
-			                			<div class="form-counter">1</div>
-			                			Event Type
+			                		<a href="index.html" class="complete">
+<!-- 			                			<div class="form-counter">1</div>
+ -->			                			1. Event Type <span class="glyphicon glyphicon-ok"></span>
 			                		</a>
 			                	</li>
 			                	<li class="col-md-3">
-			                		<a href="/form.html" class="complete">
-			                			<div class="form-counter">2</div>
-			                			Details
+			                		<a href="form.html" class="complete">
+<!-- 			                			<div class="form-counter">2</div>
+ -->			                			2. Details <span class="glyphicon glyphicon-ok"></span>
 			                		</a>
 			                	</li>
 			                	<li class="col-md-3">
-			                		<span class="like-link complete">
-			                			<div class="form-counter">3</div>
-			                			Extras
-			                		</span>
+			                		<a href="form2.html" class="complete">
+<!-- 			                			<div class="form-counter">3</div>
+ -->			                			3. Extras <span class="glyphicon glyphicon-ok"></span>
+			                		</a>
 			                	</li>
 			                	<li class="col-md-3">
 			                		<span class="like-link active">
-			                			<div class="form-counter">4</div>
-			                			Contact Info
+<!-- 			                			<div class="form-counter">4</div>
+ -->			                			4. Contact Info
 			                		</span>
 			                	</li>
 		                	</ul>
 		                </div>
 
-		                <h2 class="top-med-margin bottom-sm-margin">Let us know how to contact you</h2>
+		                <h2 class="top-med-margin bottom-med-margin text-center">Let us know how to contact you</h2>
 
 		                <form class="form-pretty">
 		                	<div class="row">
@@ -119,7 +120,7 @@
 					                	<span class="input input--juro">
 											<input class="input__field input__field--juro" type="text" id="input-1" />
 											<label class="input__label input__label--juro" for="input-1">
-												<span class="input__label-content input__label-content--juro">Name</span>
+												<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-user" style="left: -6px; top: 2px; position: relative;"></span>Name</span>
 											</label>
 										</span>
 									</div>
@@ -129,7 +130,7 @@
 										<span class="input input--juro">
 											<input class="input__field input__field--juro" type="text" id="input-2" />
 											<label class="input__label input__label--juro" for="input-2">
-												<span class="input__label-content input__label-content--juro">Company</span>
+												<span class="input__label-content input__label-content--juro"><span class="awe awe-building" style="left: -6px; top: -1px; position: relative;"></span>Company&nbsp;<small>(optional)</small></span>
 											</label>
 										</span>
 									</div>
@@ -142,7 +143,7 @@
 										<span class="input input--juro">
 											<input class="input__field input__field--juro" type="tel" id="input-2" />
 											<label class="input__label input__label--juro" for="input-2">
-												<span class="input__label-content input__label-content--juro">Phone</span>
+												<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-phone" style="left: -6px; top: 2px; position: relative;"></span><span id="phoneLabel">Phone</span></span>
 											</label>
 										</span>
 									</div>
@@ -151,7 +152,7 @@
 					                	<span class="input input--juro">
 											<input class="input__field input__field--juro" type="email" id="input-1" />
 											<label class="input__label input__label--juro" for="input-1">
-												<span class="input__label-content input__label-content--juro">Email</span>
+												<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-envelope" style="left: -6px; top: 2px; position: relative;"></span><span id="emailLabel">Email</span></span>
 											</label>
 										</span>
 									</div>
@@ -162,58 +163,86 @@
 
 							<div class="row">
 
-		                		<div class="bottom-med-margin col-md-6">
+		                		<div class="col-md-6 bottom-med-margin">
 
 		                			<p class="like-label">How should we contact you?</p>
 							        
-							        <label class="radio">
-							            <input type="radio"  checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsRadios" class="custom-radio">
+								    <label for="phoneCheck" class="checkbox">
+						            	<input type="checkbox" data-toggle="checkbox" id="phoneCheck" value="" checked="checked" class="custom-checkbox">
 						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
+						            		<span class="icon-unchecked"></span>
+						            		<span class="icon-checked"></span>
+						            	</span>
 							            Phone
 							        </label>
-									
-									<label class="radio">
-							            <input type="radio" data-toggle="radio" value="option2" id="optionsRadios2" name="optionsRadios" class="custom-radio">
+								    <label for="emailCheck" class="checkbox">
+						            	<input type="checkbox" data-toggle="checkbox" id="emailCheck" value="" checked="checked" class="custom-checkbox">
 						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
+						            		<span class="icon-unchecked"></span>
+						            		<span class="icon-checked"></span>
+						            	</span>
 							            Email
-							         </label>
+							        </label>
 
 							    </div>
 
-								<div class="bottom-med-margin col-md-6">
+								<div class="col-md-6 bottom-med-margin">
 
-		                			<p class="like-label">Do you want a viewing?</p>
-							        
-							        <label class="radio">
-							            <input type="radio"  checked="" data-toggle="radio" value="option1" id="optionsRadios3" name="optionsRadios" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Not yet
-							        </label>
-									
-									<label class="radio">
-							            <input type="radio" data-toggle="radio" value="option2" id="optionsRadios4" name="optionsRadios" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Yes, and I'm free on...
-							         </label>
+			                			<p class="like-label">Do you want a viewing?</p>
+
+			                			<div class="row">
+			                				<div class="col-md-12">
+										        <label class="radio hideRadioWithMoreInfo" data-toggle="radio">
+										            <input type="radio"  checked="" value="option1" id="optionsRadios3" name="optionsRadios" class="custom-radio" data-more="hide">
+									            	<span class="icons">
+										            	<span class="icon-unchecked"></span>
+										            	<span class="icon-checked"></span>
+										            </span>
+										            <span class="radio-text" data-long-text="Not yet" data-short-text="No">Not yet</span>
+										        </label>
+												
+												<label class="radio showRadioWithMoreInfo">
+										            <input type="radio" data-toggle="radio" value="option2" id="optionsRadios4" name="optionsRadios" class="custom-radio" data-more="show">
+									            	<span class="icons">
+										            	<span class="icon-unchecked"></span>
+										            	<span class="icon-checked"></span>
+										            </span>
+										            <span class="radio-text" data-long-text="Yes, and I'm free on..." data-short-text="Yes">Yes, and I'm free on...</span>
+										         </label>
+										    </div>
+										    <div class="col-md-9">
+												<div class="top-tiny-margin moreInfo hide">
+													<span class="input input--juro">
+														<input class="input__field input__field--juro" type="tel" id="viewingTimesInput" />
+														<label class="input__label input__label--juro" for="viewingTimesInput">
+															<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-time" style="left: -4px; top: 1px; position: relative;"></span>I'm free at</span>
+														</label>
+													</span>
+												</div>
+										    </div>
+										</div>
 
 							    </div>
 
 							</div>
-
-
-							<a href="/rfp/confirmation.html" class="btn btn-success btn-lg upper">Submit <span class="awe awe-angle-right"></span></a> 
+							<div class="row">
+								<div class="bottom-med-margin col-md-12">
+									<span class="textarea textarea--juro">
+										<textarea rows="3" class="textarea__field textarea__field--juro" id="textarea-3"></textarea>
+										<label class="textarea__label textarea__label--juro" for="textarea-3">
+											<span class="textarea__label-content textarea__label-content--juro"><span class="glyphicon glyphicon-comment" style="left: -6px; top: 3px; position: relative;"></span>Anything else we should know?</span>
+										</label>
+									</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<a href="form2.html" class="btn btn-lg upper top-sm-margin"><span class="awe awe-angle-left" style="left: -4px"></span>Back</a>
+								</div>
+								<div class="col-md-6 text-right">
+									<a href="confirmation.html" class="btn btn-success btn-lg upper top-sm-margin ">Finish <span class="awe awe-angle-right"></span></a> 
+								</div>
+							</div>
 
 		                </form>
 		             </div>
@@ -373,8 +402,8 @@
 	</section> -->
 
     <section>
-	    <footer class="footer top-med-pad">
-	        <div class="content bottom-sm-margin bottom-med-pad">
+	    <footer class="footer top-margin">
+<!-- 	        <div class="content bottom-sm-margin bottom-med-pad">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-sm-3 col-md-3">
@@ -449,8 +478,8 @@
 	                    </div>
 	                </div>
 	            </div>
-	        </div>
-	        <div class="bottom">
+	        </div> -->
+	      <!--   <div class="bottom">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-xs-12 col-sm-6 col-md-4">
@@ -477,11 +506,16 @@
 	                    </div>
 	                </div>
 	            </div>
-	        </div>
+	        </div> -->
 	    </footer>
 	</section>
 
+	<script src="js/modernizr.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="js/legacy.js"></script>
+	<script src="js/picker.js"></script>
+	<script src="js/picker.date.js"></script>
+	<script src="js/picker.time.js"></script>
 	<script src="js/tooltip.js"></script>
 	<script src="js/popover.js"></script>
 	<script src="js/selectFX.js"></script>

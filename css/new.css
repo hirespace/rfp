@@ -115,6 +115,9 @@ label {
 	background: transparent no-repeat center center;
 	background-size: 100% auto;
 }
+.rfp-category-list .categorytile.othercategorytile {
+	height: 100px;
+}
 .rfp-category-list .categorytile:hover,
 .rfp-category-list .categorytile:focus {
 	background-size: 107.5% auto;
@@ -129,56 +132,42 @@ label {
 }
 
 .rfp-category-list .categorytile2 {
-	background-image: url('https://hirespace.com/img/homepage/weddings.jpg');
-}
-
-.rfp-category-list .categorytile3 {
-	background-image: url('https://hirespace.com/img/homepage/unusual.jpg');
-}
-
-.rfp-category-list .categorytile4 {
-	background-image: url('https://hirespace.com/img/homepage/private-dining.jpg');
-}
-
-.rfp-category-list .categorytile5 {
 	background-image: url('https://hirespace.com/img/homepage/meetings.jpg');
 }
 
-.rfp-category-list .categorytile6 {
-	background-image: url('https://hirespace.com/img/homepage/summer-parties.jpg');
-}
-
-.rfp-category-list .categorytile7 {
+.rfp-category-list .categorytile3 {
 	background-image: url('https://hirespace.com/img/homepage/parties.jpg');
 }
 
+.rfp-category-list .categorytile4 {
+	background-image: url('https://hirespace.com/img/homepage/summer-parties.jpg');
+}
+
+.rfp-category-list .categorytile5 {
+	background-image: url('https://az413805.vo.msecnd.net/spaces/ls-l/7471/Great%20Halls%207.jpg');
+}
+
+.rfp-category-list .categorytile6 {
+	background-image: url('https://az413805.vo.msecnd.net/spaces/ls-l/6441/4749TannerSt_The%20Loft(b).jpg');
+}
+
+.rfp-category-list .categorytile7 {
+	background-image: url('https://az413805.vo.msecnd.net/spaces/oc-l/43159/lpypmluzoeg.jpg');
+}
+
 .rfp-category-list .categorytile8 {
-	background-image: url('https://hirespace.com/img/homepage/london.jpg');
+	background-image: url('https://hirespace.com/img/homepage/private-dining.jpg');
 }
 
 .rfp-category-list .categorytile9 {
-	background-image: url('https://hirespace.com/img/homepage/manchester.jpg');
+	background-image: url('https://az413805.vo.msecnd.net/spaces/ls-l/6917/lmlu1cwgq0g.jpg');
 }
 
 .rfp-category-list .categorytile10 {
-	background-image: url('https://hirespace.com/img/homepage/liverpool.jpg');
+	background-image: url('https://hirespace.com/img/homepage/london.jpg');
 }
 
-.rfp-category-list .categorytile11 {
-	background-image: url('https://hirespace.com/img/homepage/birmingham.jpg');
-}
 
-.rfp-category-list .categorytile12 {
-	background:url('https://hirespace.com/img/homepage/works.jpg');
-}
-
-.rfp-category-list .categorytile13 {
-	background-image: url('https://hirespace.com/img/homepage/list-venue.jpg');
-}
-
-.rfp-category-list .categorytile14 {
-	background-image: url('https://hirespace.com/img/homepage/ask-expert.jpg');
-}
 
 .btn-lg {
 	font-size: 18px;
@@ -191,6 +180,12 @@ label {
 	left: 4px;
 	top: -1px;
 	line-height: 18px;
+}
+
+h2 .upper {
+  font-weight: normal !important;
+  top: -5px;
+  position: relative;
 }
 
 .form-stepper {
@@ -239,4 +234,31 @@ label {
 section .btn-lg, form .btn-lg {
 	padding: 11px 15px 8px 15px;
 	font-weight: bold;
+}
+
+.small-link {
+  color: #535584;
+  font-weight: normal;
+  font-size: 0.6em;
+  text-rendering: geometricPrecision;
+  /* text-decoration: underline; */
+  cursor: pointer;
+}
+
+.like-label {
+  color: #535584;
+}
+
+.enquiry-info {
+	background: #e5e5e5;
+}
+
+/*To hide datepicker stuff*/
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type="date"]::-webkit-input-placeholder{ 
+    visibility: hidden !important;
 }

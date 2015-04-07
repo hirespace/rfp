@@ -56,7 +56,7 @@
 		// when opening the select element, the default placeholder (if any) is shown
 		stickyPlaceholder : true,
 		// callback when changing the value
-		onChange : function( val ) { return false; }
+		onChange : function( val, selPlaceholder ) { return false; }
 	}
 
 	/**
@@ -71,6 +71,9 @@
 
 		// get selected option (either the first option with attr selected or just the first option)
 		this.selectedOpt = selectedOpt || this.el.querySelector( 'option' );
+		this.label = $(this.el).data('label');
+		this.icon = $(this.el).data('icon');
+		this.iconset = $(this.el).data('iconset');
 
 		// create structure
 		this._createSelectEl();
@@ -84,8 +87,17 @@
 		// current index
 		this.current = this.selOpts.indexOf( this.selEl.querySelector( 'li.cs-selected' ) ) || -1;
 		
+		// label elem
+		this.selLabel = this.selEl.querySelector( 'span.cs-label' );
+
+		// placeholder content elem
+		this.selLabelContent = this.selEl.querySelector( 'span.cs-label .cs-label-content' );
+
 		// placeholder elem
 		this.selPlaceholder = this.selEl.querySelector( 'span.cs-placeholder' );
+
+		// placeholder content elem
+		this.selPlaceholderContent = this.selEl.querySelector( 'span.cs-placeholder .cs-placeholder-content' );
 
 		// init events
 		this._initEvents();
@@ -139,7 +151,7 @@
 		this.selEl = document.createElement( 'div' );
 		this.selEl.className = this.el.className;
 		this.selEl.tabIndex = this.el.tabIndex;
-		this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
+		this.selEl.innerHTML = '<span class="cs-label"><span class="cs-label-content"><span class="' + this.iconset + ' ' + this.iconset + '-' + this.icon + '" style="position: relative;"></span>' + this.label + '</span></span><span class="cs-placeholder"><span class="cs-placeholder-content"></span></span>' + opts_el;
 		this.el.parentNode.appendChild( this.selEl );
 		this.selEl.appendChild( this.el );
 	}
@@ -152,6 +164,11 @@
 
 		// open/close select
 		this.selPlaceholder.addEventListener( 'click', function() {
+			self._toggleSelect();
+		} );
+
+		// open/close select
+		this.selLabel.addEventListener( 'click', function() {
 			self._toggleSelect();
 		} );
 
@@ -246,14 +263,16 @@
 		if( this._isOpen() ) {
 			if( this.current !== -1 ) {
 				// update placeholder text
-				this.selPlaceholder.textContent = this.selOpts[ this.current ].textContent;
+				//this.selLabelContent.textContent = this.selOpts[ this.current ].textContent;
+				//this.selPlaceholderContent.textContent = this.selOpts[ this.current ].textContent;
 			}
 			classie.remove( this.selEl, 'cs-active' );
 		}
 		else {
 			if( this.hasDefaultPlaceholder && this.options.stickyPlaceholder ) {
 				// everytime we open we wanna see the default placeholder text
-				this.selPlaceholder.textContent = this.selectedOpt.textContent;
+				//this.selLabelContent.textContent = this.selectedOpt.textContent;
+				//this.selPlaceholderContent.textContent = this.selectedOpt.textContent;
 			}
 			classie.add( this.selEl, 'cs-active' );
 		}
@@ -273,7 +292,8 @@
 		var opt = this.selOpts[ this.current ];
 
 		// update current selected value
-		this.selPlaceholder.textContent = opt.textContent;
+		//this.selLabelContent.textContent = "Style";
+		this.selPlaceholderContent.textContent = opt.textContent;
 		
 		// change native select elementÂ´s value
 		this.el.value = opt.getAttribute( 'data-value' );
@@ -297,7 +317,7 @@
 		}
 
 		// callback
-		this.options.onChange( this.el.value );
+		this.options.onChange( this.el.value , this.selPlaceholder);
 	}
 
 	/**
