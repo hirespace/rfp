@@ -123,13 +123,14 @@
 				                	<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-1" />
 										<label class="input__label input__label--juro" for="input-1">
-											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-pencil" style="left: -6px; top: -2px; position: relative;"></span>Name of conference</span>
+											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-pencil" style="left: -6px; top: -2px; position: relative;"></span>Reason for conference</span>
 										</label>
 									</span>
 								</div>
 								
 								<div class="bottom-med-margin col-md-6">
-									<span class="input input--juro" style="width: 200px;">
+									<!-- @QUESTION Why the style="width: 200px;"? -->
+									<span class="input input--juro">
 										<input class="input__field input__field--juro" type="text" id="input-2" />
 										<label class="input__label input__label--juro" for="input-2">
 											<span class="input__label-content input__label-content--juro"><span class="awe awe-group" style="left: -5px; top: -3px; position: relative;"></span>Number of guests</span>
@@ -140,7 +141,8 @@
 
 							<div class="row">
 								<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-border" data-label="Style" data-icon="tag"  data-iconset="glyphicon">
+									<!-- @QUESTION Possibly "Venue Style"? -->
+									<select class="cs-select cs-skin-border" data-label="Style of Venue" data-icon="tag"  data-iconset="glyphicon">
 										<option value="any">Any</option>
 										<option value="traditional">Traditional</option>
 										<option value="modern">Modern</option>
@@ -152,7 +154,8 @@
 								</div>
 
 								<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-border" data-label="Layout" data-icon="th"  data-iconset="glyphicon">
+									<!-- @QUESTION Possibly "Venue Layout"? -->
+									<select class="cs-select cs-skin-border" data-label="Layout of Venue" data-icon="th"  data-iconset="glyphicon">
 										<option value="any">Any</option>
 										<option value="theatre">Theatre</option>
 										<option value="caberet">Cabaret</option>
@@ -184,6 +187,38 @@
 							</div>
 
 							<div class="row">
+								<div class="bottom-med-margin col-md-4">
+									<span class="input input--juro">
+										<input class="input__field input__field--juro" type="text" id="input-4" />
+										<label class="input__label input__label--juro" for="input-4">
+											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-gbp" style="left: -4px; top: 1px; position: relative;"></span>Budget</span>
+										</label>
+									</span>
+									<label class="radio">
+										<input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+										Total conference budget
+									</label>
+									<label class="radio">
+										<input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+										Package per person
+									</label>
+									<label class="radio">
+										<input type="radio" data-toggle="radio" value="option1" id="optionsRadios3" name="optionsRadios" class="custom-radio">
+						            	<span class="icons">
+							            	<span class="icon-unchecked"></span>
+							            	<span class="icon-checked"></span>
+							            </span>
+										Venue hire budget
+									</label>
+								</div>
 
 							    <div class="bottom-med-margin col-md-8">
 							    	<div class="row">
@@ -227,7 +262,7 @@
 								    <div class="row">
 								    	<div class="col-md-3">
 										    <label for="checkbox2" class="checkbox"  id="toggleAllDay" >
-								            	<input type="checkbox" data-toggle="checkbox" value="" class="custom-checkbox">
+								            	<input type="checkbox" data-toggle="checkbox" id="checkbox2" value="" class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
 								            		<span class="icon-checked"></span>
@@ -266,39 +301,6 @@
 											</span>
 								    	</div>
 								    </div>
-							    </div>
-
-								<div class="bottom-med-margin col-md-4">
-									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="input-4" />
-										<label class="input__label input__label--juro" for="input-4">
-											<span class="input__label-content input__label-content--juro"><span class="glyphicon glyphicon-gbp" style="left: -4px; top: 1px; position: relative;"></span>Budget&nbsp<small>(optional)</small></span>
-										</label>
-									</span>
-									<label class="radio">
-							            <input type="radio" checked="" data-toggle="radio" value="option1" id="optionsRadios1" name="optionsRadios" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Total conference budget
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios2" name="optionsRadios" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Package per person
-							         </label>
-							         <label class="radio">
-							            <input type="radio" data-toggle="radio" value="option1" id="optionsRadios3" name="optionsRadios" class="custom-radio">
-						            	<span class="icons">
-							            	<span class="icon-unchecked"></span>
-							            	<span class="icon-checked"></span>
-							            </span>
-							            Venue hire budget
-							         </label>
 							    </div>
 							</div>
 
