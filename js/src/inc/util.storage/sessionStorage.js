@@ -14,8 +14,14 @@
 	});
 
 	function setObject(key, data) {
-		window.sessionStorage.setItem(key, JSON.stringify(data));
-		return true;
+		if (_.isObject(data) || _.isArray(data)) {
+			window.sessionStorage.setItem(key, JSON.stringify(data));
+			return true;
+		} else {
+			debug.error("Only an Object or an Array is allowed");
+		}
+
+		return false;
 	}
 
 	function getObject(key) {
