@@ -13,15 +13,11 @@
 		session: sessionStorageFactory
 	});
 
-	function setObject(key, data) {
-		if (_.isObject(data) || _.isArray(data)) {
-			window.sessionStorage.setItem(key, JSON.stringify(data));
-			return true;
-		} else {
-			debug.error("Only an Object or an Array is allowed");
-		}
+	function setObject(key, value) {
+		var setValue = _.isObject(value) || _.isArray(value) ? JSON.stringify(value) : value;
 
-		return false;
+		window.sessionStorage.setItem(key, setValue);
+		return true;
 	}
 
 	function getObject(key) {
