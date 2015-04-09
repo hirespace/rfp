@@ -1,0 +1,1 @@
+!function(){"use strict";function e(){return{set:n,get:t,remove:s}}function n(e,n){return window.sessionStorage.setItem(e,JSON.stringify(n)),!0}function t(e){var n=window.sessionStorage.getItem(e);return n?JSON.parse(n):!1}function s(e){return t(e)?(window.sessionStorage.removeItem(e),!0):!1}_.mixin({session:e})}();

@@ -5,4 +5,7 @@
 		testKey: "testValue"
 	});
 
+	alert("magic");
+
+
 })();
