@@ -14,12 +14,41 @@ describe("_.sessionStorage()", function () {
 });
 
 describe("_.sessionStorage().set()", function () {
-	it("should set new data into sessionStorage", function () {
-		var dataIn = {testKey: "testValue"},
-			dataSet = _.sessionStorage().set("test", dataIn),
-			dataOut = window.sessionStorage.getItem("test");
+	it("should set objects and arrays into sessionStorage", function () {
+		var dataIn = [
+				{testObjectKey: "testObjectValue"},
+				["testArrayValue1", "testArrayValue2"]
+			];
 
-		expect(dataSet).toBe(true);
-		expect(JSON.parse(dataOut)).toEqual(dataIn);
+		_.forEach(dataIn, function (datum) {
+			var dataSet = _.sessionStorage().set("test", datum),
+				dataOut = window.sessionStorage.getItem("test");
+
+			expect(dataSet).toBe(true);
+			expect(JSON.parse(dataOut)).toEqual(datum);
+		});
+
+		// Yeah, clearing up the mess!!
+		window.sessionStorage.removeItem("test");
+	});
+});
+
+describe("_.sessionStorage().set()", function () {
+	it("should not set non-objects and non-arrays into sessionStorage", function () {
+		var dataIn = [
+			true,
+			null,
+			42,
+			"testString"
+		];
+
+		_.forEach(dataIn, function (datum) {
+			var dataSet = _.sessionStorage().set("test", datum);
+
+			expect(dataSet).toBe(false);
+		});
+
+		// Yeah, clearing up the mess!!
+		window.sessionStorage.removeItem("test");
 	});
 });

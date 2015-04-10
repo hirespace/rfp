@@ -14,13 +14,14 @@
 	});
 
 	// Since the getObject method always parses a string, there is no way to differentiate whether we passed
-	// an object/array, or a simple string.
+	// an Object/Array, or something else. Therefore we are only allowing Objects and Arrays.
 	function setObject(key, value) {
 		if (_.isObject(value) || _.isArray(value)) {
 			window.sessionStorage.setItem(key, JSON.stringify(value));
 			return true;
 		}
 
+		// @TODO do we want to suppress this log?
 		debug.error("You can only pass Objects and Arrays");
 		return false;
 	}
