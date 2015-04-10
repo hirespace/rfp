@@ -21,8 +21,6 @@
 			return true;
 		}
 
-		// @TODO do we want to suppress this log?
-		debug.error("You can only pass Objects and Arrays");
 		return false;
 	}
 

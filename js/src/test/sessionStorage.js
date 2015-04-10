@@ -14,11 +14,11 @@ describe("_.sessionStorage()", function () {
 });
 
 describe("_.sessionStorage().set()", function () {
-	it("should set objects and arrays into sessionStorage", function () {
+	it("should set Objects and Arrays into sessionStorage", function () {
 		var dataIn = [
-				{testObjectKey: "testObjectValue"},
-				["testArrayValue1", "testArrayValue2"]
-			];
+			{testObjectKey: "testObjectValue"},
+			["testArrayValue1", "testArrayValue2"]
+		];
 
 		_.forEach(dataIn, function (datum) {
 			var dataSet = _.sessionStorage().set("test", datum),
@@ -34,7 +34,7 @@ describe("_.sessionStorage().set()", function () {
 });
 
 describe("_.sessionStorage().set()", function () {
-	it("should not set non-objects and non-arrays into sessionStorage", function () {
+	it("should not set non-Objects and non-Arrays into sessionStorage", function () {
 		var dataIn = [
 			true,
 			null,
@@ -47,6 +47,53 @@ describe("_.sessionStorage().set()", function () {
 
 			expect(dataSet).toBe(false);
 		});
+
+		// Yeah, clearing up the mess!!
+		window.sessionStorage.removeItem("test");
+	});
+});
+
+// This test could consist of less lines, but in terms of readability, I feel like the below is fine
+describe("_.sessionStorage().get()", function () {
+	it("should get an Object or an Array from sessionStorage provided a key", function () {
+		var dataIn = {testObjectKey: "testObjectValue"};
+
+		_.sessionStorage().set("test", dataIn);
+
+		var dataOut = _.sessionStorage().get("test");
+
+		expect(dataOut).toEqual(dataIn);
+
+		// Yeah, clearing up the mess!!
+		window.sessionStorage.removeItem("test");
+	});
+});
+
+describe("_.sessionStorage().get()", function () {
+	it("should not get an Object or an Array from sessionStorage provided a non-existant key", function () {
+		var dataIn = {testObjectKey: "testObjectValue"};
+
+		_.sessionStorage().set("test", dataIn);
+
+		var dataOut = _.sessionStorage().get("testFail");
+
+		expect(dataOut).toBe(false);
+
+		// Yeah, clearing up the mess!!
+		window.sessionStorage.removeItem("test");
+	});
+});
+
+describe("_.sessionStorage().remove()", function () {
+	it("should remove an Object or an Array from sessionStorage provided a key", function () {
+		var dataIn = {testObjectKey: "testObjectValue"};
+
+		_.sessionStorage().set("test", dataIn);
+		_.sessionStorage().remove("test");
+
+		var dataOut = _.sessionStorage().get("test");
+
+		expect(dataOut).toBe(false);
 
 		// Yeah, clearing up the mess!!
 		window.sessionStorage.removeItem("test");
