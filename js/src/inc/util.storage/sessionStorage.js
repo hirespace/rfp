@@ -10,14 +10,19 @@
 	}
 
 	_.mixin({
-		session: sessionStorageFactory
+		sessionStorage: sessionStorageFactory
 	});
 
+	// Since the getObject method always parses a string, there is no way to differentiate whether we passed
+	// an object/array, or a simple string.
 	function setObject(key, value) {
-		var setValue = _.isObject(value) || _.isArray(value) ? JSON.stringify(value) : value;
+		if (_.isObject(value) || _.isArray(value)) {
+			window.sessionStorage.setItem(key, JSON.stringify(value));
+			return true;
+		}
 
-		window.sessionStorage.setItem(key, setValue);
-		return true;
+		debug.error("You can only pass Objects and Arrays");
+		return false;
 	}
 
 	function getObject(key) {

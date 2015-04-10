@@ -1,8 +1,8 @@
 (function () {
 	"use strict";
 
-	_.session().set("test", {
-		testKey: "testValue"
-	});
+	//_.sessionStorage().set("test", {
+	//	testKey: "testValue"
+	//});
 
 })();
