@@ -21,10 +21,12 @@
 	assignActive();
 
 	function assignActive() {
+		sessionStorage.set(activeStep);
+
 		var vProgress = $("#vProgress");
 		var children = vProgress.children();
 
-		_.forEach(children, function(ele) {
+		_.forEach(children, function (ele) {
 			var toggleSection = $(ele).attr("toggle-section");
 
 			if (toggleSection == section.active()) {
@@ -37,9 +39,12 @@
 		});
 	}
 
-	$(".categorytile").click(function() {
+	$(".categorytile, .next").click(function () {
 		section.next();
-		//alert("ok");
+	});
+
+	$(".prev").click(function () {
+		section.prev();
 	});
 
 	function stepActive() {
@@ -47,7 +52,8 @@
 	}
 
 	function stepNext() {
-		// @TODO document why 2 rather than 1!
+		// Ok so this will be 1 in the end, as we also have the confirmation page in place. It is somewhat confusing
+		// though so possibly makes sense to document it or keep this comment here.
 		if (activeStep > (stepsKeys.length - 2)) {
 			return false;
 		}
