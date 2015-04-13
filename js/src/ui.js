@@ -25,15 +25,20 @@
 		var children = vProgress.children();
 
 		_.forEach(children, function(ele) {
-			console.log(section.active());
 			var toggleSection = $(ele).attr("toggle-section");
-			toggleSection == section.active() ? $(ele).find("a").addClass("active") : "";
+
+			if (toggleSection == section.active()) {
+				$(ele).find("span").addClass("active");
+				$("section #" + toggleSection).removeClass("hide");
+			} else {
+				$(ele).find("span").removeClass("active");
+				$("section #" + toggleSection).addClass("hide");
+			}
 		});
 	}
 
 	$(".categorytile").click(function() {
 		section.next();
-		console.log(activeStep);
 		//alert("ok");
 	});
 
