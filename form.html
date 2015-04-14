@@ -260,8 +260,9 @@
 							<div class="row">
 								<div class="bottom-med-margin col-md-6">
 				                	<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="rfpFormReasonForConference" rules='["required"]'/>
-										<label class="input__label input__label--juro" for="input-1">
+										<input class="input__field input__field--juro rfpFormInput" type="text"
+										       id="rfpFormReasonForConference" rules='["required"]'/>
+										<label class="input__label input__label--juro" for="rfpFormReasonForConference">
 											<span class="input__label-content input__label-content--juro"><span
 													class="glyphicon glyphicon-pencil"
 													style="left: -6px; top: -2px; position: relative;"></span>Reason for conference</span>
@@ -272,8 +273,9 @@
 								<div class="bottom-med-margin col-md-6">
 									<!-- @QUESTION Why the style="width: 200px;"? -->
 									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="rfpFormNumberOfGuests" rules='["required","number"]'/>
-										<label class="input__label input__label--juro" for="input-2">
+										<input class="input__field input__field--juro rfpFormInput" type="number"
+										       id="rfpFormNumberOfGuests" rules='["required","number"]'/>
+										<label class="input__label input__label--juro" for="rfpFormNumberOfGuests">
 											<span class="input__label-content input__label-content--juro"><span
 													class="awe awe-group"
 													style="left: -5px; top: -3px; position: relative;"></span>Number of guests</span>
@@ -285,8 +287,9 @@
 							<div class="row">
 								<div class="bottom-med-margin col-md-6">
 									<!-- @QUESTION Possibly "Venue Style"? -->
-									<select class="cs-select cs-skin-border" data-label="Style of Venue" data-icon="tag"
-									        data-iconset="glyphicon">
+									<select class="cs-select cs-skin-border rfpFormSelect" data-label="Style of Venue"
+									        data-icon="tag"
+									        data-iconset="glyphicon" id="rfpFormStyleOfVenue" rules='["required"]'>
 										<option value="any">Any</option>
 										<option value="traditional">Traditional</option>
 										<option value="modern">Modern</option>
@@ -299,8 +302,9 @@
 
 								<div class="bottom-med-margin col-md-6">
 									<!-- @QUESTION Possibly "Venue Layout"? -->
-									<select class="cs-select cs-skin-border" data-label="Layout of Venue" data-icon="th"
-									        data-iconset="glyphicon">
+									<select class="cs-select cs-skin-border rfpFormSelect" data-label="Layout of Venue"
+									        data-icon="th"
+									        data-iconset="glyphicon" id="rfpFormLayoutOfVenue" rules='["required"]'>
 										<option value="any">Any</option>
 										<option value="theatre">Theatre</option>
 										<option value="caberet">Cabaret</option>
@@ -313,8 +317,9 @@
 
 							<div class="row">
 								<div class="bottom-med-margin col-md-6">
-									<select class="cs-select cs-skin-border" data-label="City" data-icon="university"
-									        data-iconset="fa">
+									<select class="cs-select cs-skin-border rfpFormSelect" data-label="City"
+									        data-icon="university"
+									        data-iconset="fa" id="rfpFormCity" rules='["required"]'>
 										<option value="birmingham">Birmingham</option>
 										<option value="liverpool">Liverpool</option>
 										<option value="london">London</option>
@@ -324,8 +329,9 @@
 
 								<div class="bottom-med-margin col-md-6">
 									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="input-3"/>
-										<label class="input__label input__label--juro" for="input-3">
+										<input class="input__field input__field--juro rfpFormInput" type="text"
+										       id="rfpFormAreaOfCity" rules='["optional"]'/>
+										<label class="input__label input__label--juro" for="rfpFormAreaOfCity">
 											<span class="input__label-content input__label-content--juro"><span
 													class="glyphicon glyphicon-map-marker"
 													style="left: -6px; top: 1px; position: relative;"></span>Area of City <small>
@@ -339,34 +345,41 @@
 							<div class="row">
 								<div class="bottom-med-margin col-md-4">
 									<span class="input input--juro">
-										<input class="input__field input__field--juro" type="text" id="input-4"/>
-										<label class="input__label input__label--juro" for="input-4">
+										<input class="input__field input__field--juro rfpFormInput" type="number" id="rfpFormBudget"
+										       rules='["required","number"]'/>
+										<label class="input__label input__label--juro" for="rfpFormBudget">
 											<span class="input__label-content input__label-content--juro"><span
 													class="glyphicon glyphicon-gbp"
 													style="left: -4px; top: 1px; position: relative;"></span>Budget</span>
 										</label>
 									</span>
-									<label class="radio">
-										<input type="radio" checked="" data-toggle="radio" value="option1"
-										       id="optionsRadios1" name="optionsRadios" class="custom-radio">
+									<input type="hidden" class="rfpFormInput" id="rfpFormBudgetOptions"
+									       rules='["required"]'/>
+									<label class="radio rfpFormRadio">
+										<input type="radio" checked="" data-toggle="radio"
+										       value="Total conference budget"
+										       name="optionsRadios" class="custom-radio"
+										       data-for="rfpFormBudgetOptions">
 						            	<span class="icons">
 							            	<span class="icon-unchecked"></span>
 							            	<span class="icon-checked"></span>
 							            </span>
 										Total conference budget
 									</label>
-									<label class="radio">
-										<input type="radio" data-toggle="radio" value="option1" id="optionsRadios2"
-										       name="optionsRadios" class="custom-radio">
+									<label class="radio rfpFormRadio">
+										<input type="radio" data-toggle="radio" value="Package per person"
+										       name="optionsRadios" class="custom-radio"
+										       data-for="rfpFormBudgetOptions">
 						            	<span class="icons">
 							            	<span class="icon-unchecked"></span>
 							            	<span class="icon-checked"></span>
 							            </span>
 										Package per person
 									</label>
-									<label class="radio">
-										<input type="radio" data-toggle="radio" value="option1" id="optionsRadios3"
-										       name="optionsRadios" class="custom-radio">
+									<label class="radio rfpFormRadio">
+										<input type="radio" data-toggle="radio" value="Venue hire budget"
+										       name="optionsRadios" class="custom-radio"
+										       data-for="rfpFormBudgetOptions">
 						            	<span class="icons">
 							            	<span class="icon-unchecked"></span>
 							            	<span class="icon-checked"></span>
@@ -379,9 +392,9 @@
 									<div class="row">
 										<div class="col-md-6">
 											<span class="input input--juro" id="startDate">
-												<input class="input__field input__field--juro" type="date"
-												       id="inputStartDate"/>
-												<label class="input__label input__label--juro" for="inputStartDate">
+												<input class="input__field input__field--juro rfpFormInput" type="date"
+												       id="rfpFormDateStart" rules='["optional"]'/>
+												<label class="input__label input__label--juro" for="rfpFormDateStart">
 													<span class="input__label-content input__label-content--juro"><span
 															class="glyphicon glyphicon-calendar"
 															style="left: -4px; top: 1px; position: relative;"></span><span
@@ -394,9 +407,10 @@
 											<div class="row">
 												<div class="col-md-6">
 													<span class="input input--juro">
-														<input class="input__field input__field--juro" type="time"
-														       id="input-4"/>
-														<label class="input__label input__label--juro" for="input-4">
+														<input class="input__field input__field--juro rfpFormInput"
+														       type="time"
+														       id="rfpFormTimeStart" rules='["optional"]'/>
+														<label class="input__label input__label--juro " for="rfpFormTimeStart">
 															<span class="input__label-content input__label-content--juro"><span
 																	class="glyphicon glyphicon-time"
 																	style="left: -4px; top: 1px; position: relative;"></span>Start</span>
@@ -405,9 +419,10 @@
 												</div>
 												<div class="col-md-6">
 													<span class="input input--juro">
-														<input class="input__field input__field--juro" type="time"
-														       id="input-4"/>
-														<label class="input__label input__label--juro" for="input-4">
+														<input class="input__field input__field--juro rfpFormInput"
+														       type="time"
+														       id="rfpFormTimeFinish" rules='["optional"]'/>
+														<label class="input__label input__label--juro" for="rfpFormTimeFinish">
 															<span class="input__label-content input__label-content--juro"><span
 																	class="glyphicon glyphicon-time"
 																	style="left: -4px; top: 1px; position: relative;"></span>Finish</span>
@@ -418,9 +433,9 @@
 										</div>
 										<div class="col-md-6 hide" id="toggleEndDate">
 								       		<span class="input input--juro">
-												<input class="input__field input__field--juro" type="date"
-												       id="endDate"/>
-												<label class="input__label input__label--juro" for="input-4">
+												<input class="input__field input__field--juro rfpFormInput" type="date"
+												       id="rfpFormDateFinish" rules='["optional"]'/>
+												<label class="input__label input__label--juro" for="rfpFormDateFinish">
 													<span class="input__label-content input__label-content--juro"><span
 															class="glyphicon glyphicon-calendar"
 															style="left: -4px; top: 1px; position: relative;"></span>End Date</span>
@@ -429,9 +444,13 @@
 										</div>
 									</div>
 									<div class="row">
+										<input type="hidden" class="rfpFormInput" id="rfpFormDateOptions" rules='["optional"]'/>
+
 										<div class="col-md-3">
-											<label for="checkbox2" class="checkbox" id="toggleAllDay">
-												<input type="checkbox" data-toggle="checkbox" id="checkbox2" value=""
+											<label for="rfpFormCheckboxMultiDay" class="checkbox rfpFormCheckbox">
+												<input type="checkbox" data-toggle="checkbox"
+												       id="rfpFormCheckboxMultiDay"
+												       value="Multi-day" data-for="rfpFormDateOptions"
 												       class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
@@ -439,9 +458,9 @@
 								            	</span>
 												Multi-day
 											</label>
-											<label for="repeatCheckbox" class="checkbox">
-												<input type="checkbox" data-toggle="checkbox" id="repeatCheckbox"
-												       value=""
+											<label for="rfpFormCheckboxRepeat" class="checkbox rfpFormCheckbox">
+												<input type="checkbox" data-toggle="checkbox" id="rfpFormCheckboxRepeat"
+												       value="Repeat" data-for="rfpFormDateOptions"
 												       class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
@@ -449,9 +468,10 @@
 								            	</span>
 												Repeat
 											</label>
-											<label for="flexiCheckbox" class="checkbox">
-												<input type="checkbox" data-toggle="checkbox" id="flexiCheckbox"
-												       value=""
+											<label for="rfpFormCheckboxFlexible" class="checkbox rfpFormCheckbox">
+												<input type="checkbox" data-toggle="checkbox"
+												       id="rfpFormCheckboxFlexible"
+												       value="Flexible" data-for="rfpFormDateOptions"
 												       class="custom-checkbox">
 								            	<span class="icons">
 								            		<span class="icon-unchecked"></span>
@@ -462,14 +482,14 @@
 										</div>
 										<div class="col-md-9">
 											<span class="input input--juro top-med-margin hide" id="repeatInput">
-												<input class="input__field input__field--juro" type="text"/>
-												<label class="input__label input__label--juro" for="input-4">
+												<input class="input__field input__field--juro rfpFormInput" id="rfpFormDateOptionsRepeat" rules='["optional"]' type="text"/>
+												<label class="input__label input__label--juro" for="rfpFormDateOptionsRepeat">
 													<span class="input__label-content input__label-content--juro">How is your conference repeating?</span>
 												</label>
 											</span>
 											<span class="input input--juro top-lg-margin  hide" id="flexiInput">
-												<input class="input__field input__field--juro" type="text"/>
-												<label class="input__label input__label--juro" for="input-4">
+												<input class="input__field input__field--juro rfpFormInput" id="rfpFormDateOptionsFlexibility" rules='["optional"]' type="text"/>
+												<label class="input__label input__label--juro" for="rfpFormDateOptionsFlexibility">
 													<span class="input__label-content input__label-content--juro">How flexible are you dates / times?</span>
 												</label>
 											</span>
