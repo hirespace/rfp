@@ -40,6 +40,9 @@
 		},
 		password: function (val) {
 			return (/^.*(?=.{6,})(?=.*\d)(?=.*[a-žA-Ž]).*$/).test(val);
+		},
+		optional: function() {
+			return true;
 		}
 	};
 })();

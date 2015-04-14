@@ -78,6 +78,29 @@
 		assignActive();
 	}
 
+	var rfpInputs = $(".rfpFormInput, .rfpFormSelect"),
+		nRFPform = {};
+
+	_.forEach(rfpInputs, function (k) {
+		var ele = $(k);
+
+		var id = ele.attr("id"),
+			value = ele.val(),
+			rules = ele.attr("rules"),
+			type = ele.hasClass("rfpFormInput") ? "input" : "select";
+
+		if (id && rules) {
+			rules = JSON.parse(rules);
+
+			nRFPform[id] = {
+				type: type,
+				rules: rules,
+				value: value,
+				valid: _.form().validate(value, rules)
+			};
+		}
+	});
+
 	// So there should be a watcher set on every input / select that will evaluate whether or not the user input is
 	// valid. The rules should be set for individual inputs and there should be a well-defined set of rules somewhere.
 	// On evaluation, we will filter the valid values and update an object with form data (this should also be saved to
@@ -94,13 +117,16 @@
 	Rx.Observable.fromEvent(input, "keyup")
 		.map(function (e) {
 			var target = $(e.target),
-				value = target.val(),
-				rules = JSON.parse(target.attr("rules")),
-				id = target.attr("id");
+				id = target.attr("id"),
+				intermediary = nRFPform[id];
 
 			return {
-				value: value,
-				rules: rules,
+				value: {
+					new: target.val(),
+					old: intermediary.value
+				},
+				rules: intermediary.rules,
+				valid: intermediary.valid,
 				id: id
 			};
 		})
@@ -108,13 +134,14 @@
 		.debounce(rfpConfig.validationDebounce)
 		.distinctUntilChanged()
 		.map(function (data) {
-			var value = data.value,
+			console.log(data);
+			var value = data.value.new,
 				rules = data.rules,
 				valid = _.form().validate(value, rules);
 
 			return {
 				id: data.id,
-				value: data.value,
+				value: data.value.new,
 				valid: valid
 			};
 		})
@@ -179,15 +206,7 @@
 		}
 	});
 
-	var rfpInputs = $(".rfpFormInput");
-	_.forEach(rfpInputs, function(k) {
-		var ele = $(k);
 
-		var id = ele.attr("id"),
-			rules = ele.attr("rules");
-
-		console.log(k);
-		console.log("has an id: " + id + " and following rules: " + rules);
-	});
+	//console.log(nRFPform);
 
 })();
