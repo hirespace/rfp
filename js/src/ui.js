@@ -78,31 +78,50 @@
 	// through inputs / selects and set the values accordingly (cache).
 	// The object with form data should include input ID or any other unique identifier to enable back-tracking.
 
-	var input = $(".input__field");
+	var input = $(".input__field"),
+		rfpForm = _.sessionStorage().get("rfpForm") ? _.sessionStorage().get("rfpForm") : {
+			valid: false,
+			data: {}
+		};
 
 	Rx.Observable.fromEvent(input, "keyup")
 		.map(function (e) {
 			var target = $(e.target),
 				value = target.val(),
-				rules = JSON.parse(target.attr("rules"));
+				rules = JSON.parse(target.attr("rules")),
+				id = target.attr("id");
 
 			return {
 				value: value,
-				rules: rules
+				rules: rules,
+				id: id
 			};
 		})
-		.filter(function (data) {
-			return data.value.length > 2;
-		})
-		//.map(function(data){
-		//	return data.value;
-		//})
 		//@TODO use magicVars
 		.debounce(250)
-		//@TODO implement this
 		.distinctUntilChanged()
-		.subscribe(function (a) {
-			console.log(a);
+		.map(function (data) {
+			var value = data.value,
+				rules = data.rules,
+				valid = _.form().validate(value, rules);
+
+			return {
+				id: data.id,
+				value: data.value,
+				valid: valid
+			};
+		})
+		.filter(function(d) {
+			rfpForm.valid = d.valid;
+			rfpForm.data[d.id] = d.value;
+
+			return d.valid;
+		})
+		.subscribe(function () {
+			_.sessionStorage().set("rfpForm", rfpForm);
+
+			// Just for notification purposes until we've got tests
+			console.log("rfpForm saved to sessionStorage: " + JSON.stringify(_.sessionStorage().get("rfpForm").data));
 		});
 
 })();

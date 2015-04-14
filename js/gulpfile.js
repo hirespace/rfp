@@ -36,6 +36,8 @@ gulp.task("concat-inc", function () {
 
 // Concatenate all resources into a single ui.js file
 gulp.task("concat-all", function () {
+	jsConcat("inc");
+
 	gulp.src([
 		"src/build/vendor.js",
 		"src/build/inc.js",
