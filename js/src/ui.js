@@ -29,7 +29,7 @@
 	assignActive();
 
 	$(".categorytile, .next").click(function () {
-		section.next();
+		return checkForm() ? section.next() : false;
 	});
 
 	$(".prev").click(function () {
@@ -161,6 +161,8 @@
 
 		activeStep = activeStep + 1;
 		assignActive();
+
+		return true;
 	}
 
 	function stepPrev() {
@@ -170,6 +172,8 @@
 
 		activeStep = activeStep - 1;
 		assignActive();
+
+		return true;
 	}
 
 	function assignActive() {
@@ -203,12 +207,17 @@
 		console.log(intermediary);
 	}
 
-	//function checkForm() {
-	//	_.forEach(nRFPform, function (data, id) {
-	//		checkObject(id);
-	//	});
-	//}
-	//checkForm();
+	function checkForm() {
+		var err = [];
+
+		_.forEach(nRFPform, function (data, id) {
+			if (!checkObject(id)) {
+				err.push(id);
+			}
+		});
+
+		return err.length == 0 ? true : false;
+	}
 
 	function checkObject(id) {
 		var intermediary = nRFPform[id],
@@ -217,6 +226,10 @@
 
 		if (!valid) {
 			parent.addClass("input-error");
+			return false;
+		} else {
+			parent.removeClass("input-error");
+			return true;
 		}
 	}
 
