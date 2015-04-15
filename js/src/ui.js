@@ -1,16 +1,13 @@
 (function () {
 	"use strict";
 
-	var nRFPform = {};
+	var getRfpConfig = _.sessionStorage().get("rfpConfig"),
+		getRfpForm = _.sessionStorage().get("rfpForm");
 
-	initFormElements();
-
-	var getRfpConfig = _.sessionStorage().get("rfpConfig");
-	var getRfpForm = _.sessionStorage().get("rfpForm");
-
-	// When looping through this Object, JS will automatically order the keys alphabetically, thus a little hack is
-	// needed. See below.
-	var rfpConfig = getRfpConfig ? getRfpConfig : {
+	var nRFPform = getRfpForm ? getRfpForm : {},
+		rfpConfig = getRfpConfig ? getRfpConfig : {
+			// When looping through this Object, JS will automatically order the keys alphabetically, thus a little hack is
+			// needed. See below.
 			steps: {
 				"event-type": "Event Type",
 				"details": "Details",
@@ -20,7 +17,6 @@
 			activeStep: 1,
 			validationDebounce: 250
 		},
-	//rfpForm = getRfpForm ? getRfpForm : initFormElements(),
 		stepsKeys = _.keys(rfpConfig.steps),
 		activeStep = rfpConfig.activeStep,
 		section = {
@@ -29,6 +25,7 @@
 			prev: stepPrev
 		};
 
+	initFormElements();
 	assignActive();
 
 	$(".categorytile, .next").click(function () {
@@ -38,7 +35,6 @@
 	$(".prev").click(function () {
 		section.prev();
 	});
-
 
 	// So there should be a watcher set on every input / select that will evaluate whether or not the user input is
 	// valid. The rules should be set for individual inputs and there should be a well-defined set of rules somewhere.
@@ -85,6 +81,28 @@
 		}
 	});
 
+	$(".rfpFormDateTime").change(function (e) {
+		var target = $(e.target),
+			id = target.attr("id"),
+			value = target.val();
+
+		updateForm(id, value);
+	});
+
+	// Fire up the selects and make them change style when filled.
+	[].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (el) {
+		new SelectFx(el, {
+			onChange: function (val, selPlaceholder) {
+				var id = $(el).attr("id"),
+					value = $(selPlaceholder).find(".cs-placeholder-content").html();
+
+				updateForm(id, value);
+
+				$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
+			}
+		});
+	});
+
 	function initFormElements() {
 		var holders = $(".radio-holder, .checkbox-holder");
 
@@ -116,12 +134,15 @@
 
 			if (id && rules) {
 				rules = JSON.parse(rules);
+				value = type == "select" ? "" : value;
+
+				var valid = _.form().validate(value, rules);
 
 				nRFPform[id] = {
 					type: type,
 					rules: rules,
 					value: value,
-					valid: _.form().validate(value, rules)
+					valid: valid
 				};
 			}
 		});
@@ -177,22 +198,26 @@
 		intermediary.value = value;
 		intermediary.valid = _.form().validate(value, intermediary.rules);
 
+		checkObject(id);
 		console.log("Value Updated:");
 		console.log(intermediary);
 	}
 
-	// Fire up the selects and make them change style when filled.
-	[].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (el) {
-		new SelectFx(el, {
-			onChange: function (val, selPlaceholder) {
-				var id = $(el).attr("id"),
-					value = $(selPlaceholder).find(".cs-placeholder-content").html();
+	//function checkForm() {
+	//	_.forEach(nRFPform, function (data, id) {
+	//		checkObject(id);
+	//	});
+	//}
+	//checkForm();
 
-				updateForm(id, value);
+	function checkObject(id) {
+		var intermediary = nRFPform[id],
+			valid = intermediary.valid,
+			parent = $("#" + id).parent();
 
-				$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
-			}
-		});
-	});
+		if (!valid) {
+			parent.addClass("input-error");
+		}
+	}
 
 })();

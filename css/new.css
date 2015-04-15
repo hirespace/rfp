@@ -262,3 +262,7 @@ input::-webkit-calendar-picker-indicator{
 input[type="date"]::-webkit-input-placeholder{ 
     visibility: hidden !important;
 }
+
+.input-error {
+	border: 2px solid orangered;
+}
