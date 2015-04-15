@@ -1,7 +1,10 @@
 (function () {
 	"use strict";
 
+	initFormElements();
+
 	var getRfpConfig = _.sessionStorage().get("rfpConfig");
+	var getRfpForm = _.sessionStorage().get("rfpForm");
 
 	// When looping through this Object, JS will automatically order the keys alphabetically, thus a little hack is
 	// needed. See below.
@@ -15,36 +18,16 @@
 			activeStep: 1,
 			validationDebounce: 250
 		},
+		//rfpForm = getRfpForm ? getRfpForm : initFormElements(),
 		stepsKeys = _.keys(rfpConfig.steps),
-		activeStep = rfpConfig.activeStep;
-
-	var section = {
-		active: stepActive,
-		next: stepNext,
-		prev: stepPrev
-	};
+		activeStep = rfpConfig.activeStep,
+		section = {
+			active: stepActive,
+			next: stepNext,
+			prev: stepPrev
+		};
 
 	assignActive();
-
-	function assignActive() {
-		rfpConfig.activeStep = activeStep;
-		_.sessionStorage().set("rfpConfig", rfpConfig);
-
-		var vProgress = $("#vProgress");
-		var children = vProgress.children();
-
-		_.forEach(children, function (ele) {
-			var toggleSection = $(ele).attr("toggle-section");
-
-			if (toggleSection == section.active()) {
-				$(ele).find("span").addClass("active");
-				$("section #" + toggleSection).removeClass("hide");
-			} else {
-				$(ele).find("span").removeClass("active");
-				$("section #" + toggleSection).addClass("hide");
-			}
-		});
-	}
 
 	$(".categorytile, .next").click(function () {
 		section.next();
@@ -54,52 +37,6 @@
 		section.prev();
 	});
 
-	function stepActive() {
-		return stepsKeys[activeStep];
-	}
-
-	function stepNext() {
-		// Ok so this will be 1 in the end, as we also have the confirmation page in place. It is somewhat confusing
-		// though so possibly makes sense to document it or keep this comment here.
-		if (activeStep > (stepsKeys.length - 2)) {
-			return false;
-		}
-
-		activeStep = activeStep + 1;
-		assignActive();
-	}
-
-	function stepPrev() {
-		if (activeStep < 1) {
-			return false;
-		}
-
-		activeStep = activeStep - 1;
-		assignActive();
-	}
-
-	var rfpInputs = $(".rfpFormInput, .rfpFormSelect"),
-		nRFPform = {};
-
-	_.forEach(rfpInputs, function (k) {
-		var ele = $(k);
-
-		var id = ele.attr("id"),
-			value = ele.val(),
-			rules = ele.attr("rules"),
-			type = ele.hasClass("rfpFormInput") ? "input" : "select";
-
-		if (id && rules) {
-			rules = JSON.parse(rules);
-
-			nRFPform[id] = {
-				type: type,
-				rules: rules,
-				value: value,
-				valid: _.form().validate(value, rules)
-			};
-		}
-	});
 
 	// So there should be a watcher set on every input / select that will evaluate whether or not the user input is
 	// valid. The rules should be set for individual inputs and there should be a well-defined set of rules somewhere.
@@ -130,83 +67,131 @@
 				id: id
 			};
 		})
-		//@TODO use magicVars
 		.debounce(rfpConfig.validationDebounce)
-		.distinctUntilChanged()
 		.map(function (data) {
-			console.log(data);
 			var value = data.value.new,
 				rules = data.rules,
 				valid = _.form().validate(value, rules);
 
 			return {
 				id: data.id,
-				value: data.value.new,
+				value: value,
 				valid: valid
 			};
 		})
 		.filter(function (d) {
-			rfpForm.valid = d.valid;
-			rfpForm.data[d.id] = d.value;
+			var intermediary = nRFPform[d.id];
 
-			if (!d.valid) {
-				$(".next").addClass("disabled");
-			}
+			intermediary.value = d.value;
+			intermediary.valid = d.valid;
 
 			return d.valid;
 		})
 		.subscribe(function () {
-			$(".next").removeClass("disabled");
-			_.sessionStorage().set("rfpForm", rfpForm);
+			var intermediary = nRFPform;
+			console.log(intermediary);
+			//$(".next").removeClass("disabled");
+			//_.sessionStorage().set("rfpForm", nRFPform);
 
 			// Just for notification purposes until we've got tests
-			console.log("rfpForm saved to sessionStorage: " + JSON.stringify(_.sessionStorage().get("rfpForm").data));
+			//console.log("rfpForm saved to sessionStorage: " + JSON.stringify(_.sessionStorage().get("nRFPform").data));
 		});
 
-	// @TODO needs hell of a lot testing
 	$(".rfpFormRadio").click(function (e) {
-		var intermediary = $(e.target),
-			target = intermediary.attr("data-for");
-
-		if (target) {
-			var value = intermediary.val();
-
-			$("#" + target).val(value);
-		}
+		_.inputToggle().radio(e.target);
 	});
 
-	// @TODO needs hell of a lot testing
 	$(".rfpFormCheckbox").click(function (e) {
-		var intermediary = $(e.target),
-			target = intermediary.attr("data-for");
-
-		if (target) {
-			var value = intermediary.val();
-
-			var originalValue = $("#" + target).val(),
-				newValue;
-
-			if (!originalValue) {
-				newValue = [value];
-			} else {
-				originalValue = JSON.parse(originalValue);
-
-				if (_.includes(originalValue, value)) {
-					var index = _.indexOf(originalValue, value);
-					originalValue.splice(index, 1);
-
-					newValue = originalValue;
-				} else {
-					originalValue.push(value);
-					newValue = originalValue;
-				}
-			}
-
-			$("#" + target).val(JSON.stringify(newValue));
-		}
+		_.inputToggle().checkbox(e.target);
 	});
 
+	function initFormElements() {
+		var holders = $(".radio-holder, .checkbox-holder");
 
-	//console.log(nRFPform);
+		_.forEach(holders, function (holder) {
+
+			var type = $(holder).hasClass("radio-holder") ? "radio" : "checkbox";
+
+			var collector = $(holder).find("." + type + "-collector"),
+				inputs = $(holder).find("." + type + " input");
+
+			_.forEach(inputs, function (input) {
+				var isChecked = $(input).attr("checked") ? true : false;
+
+				if (isChecked) {
+					_.inputToggle()[type](input);
+				}
+			});
+		});
+
+		var rfpInputs = $(".rfpFormInput, .rfpFormSelect"),
+			nRFPform = {};
+
+		_.forEach(rfpInputs, function (k) {
+			var ele = $(k);
+
+			var id = ele.attr("id"),
+				value = ele.val(),
+				rules = ele.attr("rules"),
+				type = ele.hasClass("rfpFormInput") ? "input" : "select";
+
+			if (id && rules) {
+				rules = JSON.parse(rules);
+
+				nRFPform[id] = {
+					type: type,
+					rules: rules,
+					value: value,
+					valid: _.form().validate(value, rules)
+				};
+			}
+		});
+
+		console.log(nRFPform);
+	}
+
+	function stepActive() {
+		return stepsKeys[activeStep];
+	}
+
+	function stepNext() {
+		// Ok so this will be 1 in the end, as we also have the confirmation page in place. It is somewhat confusing
+		// though so possibly makes sense to document it or keep this comment here.
+		if (activeStep > (stepsKeys.length - 2)) {
+			return false;
+		}
+
+		activeStep = activeStep + 1;
+		assignActive();
+	}
+
+	function stepPrev() {
+		if (activeStep < 1) {
+			return false;
+		}
+
+		activeStep = activeStep - 1;
+		assignActive();
+	}
+
+	function assignActive() {
+		rfpConfig.activeStep = activeStep;
+		_.sessionStorage().set("rfpConfig", rfpConfig);
+
+		var vProgress = $("#vProgress");
+		var children = vProgress.children();
+
+		_.forEach(children, function (ele) {
+			var toggleSection = $(ele).attr("toggle-section");
+
+			if (toggleSection == section.active()) {
+				$(ele).find("span").addClass("active");
+				$("section #" + toggleSection).removeClass("hide");
+			} else {
+				$(ele).find("span").removeClass("active");
+				$("section #" + toggleSection).addClass("hide");
+			}
+		});
+	}
 
 })();
