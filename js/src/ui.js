@@ -88,19 +88,19 @@
 		updateForm(id, value);
 	});
 
-	[].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (el) {
-		var id = $(el).attr("id");
-
-		new SelectFx(el, {
-			onChange: function (val, selPlaceholder) {
-				var value = $(selPlaceholder).find(".cs-placeholder-content").html();
-
-				updateForm(id, value);
-
-				$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
-			}
-		});
-	});
+	//[].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (el) {
+	//	var id = $(el).attr("id");
+	//
+	//	new SelectFx(el, {
+	//		onChange: function (val, selPlaceholder) {
+	//			var value = $(selPlaceholder).find(".cs-placeholder-content").html();
+	//
+	//			updateForm(id, value);
+	//
+	//			$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
+	//		}
+	//	});
+	//});
 
 	function initFormElements() {
 		var holders = $("#" + section.active() + " .radio-holder, #" + section.active() + " .checkbox-holder");
@@ -151,6 +151,18 @@
 					}
 				} else {
 					value = type == "select" ? "" : value;
+				}
+
+				if (type == "select") {
+					new SelectFx(k, {
+						onChange: function (val, selPlaceholder) {
+							var value = $(selPlaceholder).find(".cs-placeholder-content").html();
+
+							updateForm(id, value);
+
+							$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
+						}
+					});
 				}
 
 				rules = JSON.parse(rules);
