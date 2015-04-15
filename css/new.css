@@ -111,6 +111,7 @@ label {
 	-o-transition: background-size .5s;
 	transition: background-size .5s;
 
+	cursor: pointer;
 	height: 150px;
 	background: transparent no-repeat center center;
 	background-size: 100% auto;

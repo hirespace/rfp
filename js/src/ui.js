@@ -4,7 +4,9 @@
 	var getRfpConfig = _.sessionStorage().get("rfpConfig"),
 		getRfpForm = _.sessionStorage().get("rfpForm");
 
-	var nRFPform = getRfpForm ? getRfpForm : {},
+	var rfpForm = getRfpForm ? getRfpForm : {};
+
+	var nRFPform = {},
 		rfpConfig = getRfpConfig ? getRfpConfig : {
 			// When looping through this Object, JS will automatically order the keys alphabetically, thus a little hack is
 			// needed. See below.
@@ -25,7 +27,6 @@
 			prev: stepPrev
 		};
 
-	initFormElements();
 	assignActive();
 
 	$(".categorytile, .next").click(function () {
@@ -42,12 +43,10 @@
 	// session storage once it"s been validated). On changing the URL / State / Page refresh, the object should loop
 	// through inputs / selects and set the values accordingly (cache).
 	// The object with form data should include input ID or any other unique identifier to enable back-tracking.
-
 	var input = $(".rfpFormInput"),
-		rfpForm = _.sessionStorage().get("rfpForm") ? _.sessionStorage().get("rfpForm") : {
-			valid: false,
-			data: {}
-		};
+		datetime = $(".rfpFormDateTime"),
+		checkbox = $(".rfpFormCheckbox"),
+		radio = $(".rfpFormRadio");
 
 	Rx.Observable.fromEvent(input, "keyup")
 		.map(function (e) {
@@ -65,7 +64,7 @@
 			updateForm(data.id, data.value);
 		});
 
-	$(".rfpFormRadio").click(function (e) {
+	radio.click(function (e) {
 		var updateData = _.inputToggle().radio(e.target);
 
 		if (updateData) {
@@ -73,7 +72,7 @@
 		}
 	});
 
-	$(".rfpFormCheckbox").click(function (e) {
+	checkbox.click(function (e) {
 		var updateData = _.inputToggle().checkbox(e.target);
 
 		if (updateData) {
@@ -81,7 +80,7 @@
 		}
 	});
 
-	$(".rfpFormDateTime").change(function (e) {
+	datetime.change(function (e) {
 		var target = $(e.target),
 			id = target.attr("id"),
 			value = target.val();
@@ -89,12 +88,12 @@
 		updateForm(id, value);
 	});
 
-	// Fire up the selects and make them change style when filled.
 	[].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (el) {
+		var id = $(el).attr("id");
+
 		new SelectFx(el, {
 			onChange: function (val, selPlaceholder) {
-				var id = $(el).attr("id"),
-					value = $(selPlaceholder).find(".cs-placeholder-content").html();
+				var value = $(selPlaceholder).find(".cs-placeholder-content").html();
 
 				updateForm(id, value);
 
@@ -104,7 +103,7 @@
 	});
 
 	function initFormElements() {
-		var holders = $(".radio-holder, .checkbox-holder");
+		var holders = $("#" + section.active() + " .radio-holder, #" + section.active() + " .checkbox-holder");
 
 		_.forEach(holders, function (holder) {
 
@@ -122,19 +121,37 @@
 			});
 		});
 
-		var rfpInputs = $(".rfpFormInput, .rfpFormSelect");
+		var rfpInputs = $("#" + section.active() + " .rfpFormInput, #" + section.active() + " .rfpFormSelect");
 
 		_.forEach(rfpInputs, function (k) {
-			var ele = $(k);
-
-			var id = ele.attr("id"),
+			var ele = $(k),
+				id = ele.attr("id"),
 				value = ele.val(),
 				rules = ele.attr("rules"),
 				type = ele.hasClass("rfpFormInput") ? "input" : "select";
 
 			if (id && rules) {
+				var wasSet = nRFPform[id];
+
+				if (wasSet) {
+					value = wasSet.value;
+
+					if (value.length > 0) {
+						ele.val(value);
+						ele.parent().addClass("input--filled");
+					}
+
+					// @TODO absolute and utter cruft :(
+					if (type == "select") {
+						_.forEach(ele.find("option"), function(option) {
+							if ($(option).html() == value) {
+								$(option).attr("selected",true);
+							}
+						});
+					}
+				}
+
 				rules = JSON.parse(rules);
-				value = type == "select" ? "" : value;
 
 				var valid = _.form().validate(value, rules);
 
@@ -180,8 +197,8 @@
 		rfpConfig.activeStep = activeStep;
 		_.sessionStorage().set("rfpConfig", rfpConfig);
 
-		var vProgress = $("#vProgress");
-		var children = vProgress.children();
+		var vProgress = $("#vProgress"),
+			children = vProgress.children();
 
 		_.forEach(children, function (ele) {
 			var toggleSection = $(ele).attr("toggle-section");
@@ -194,6 +211,16 @@
 				$("section #" + toggleSection).addClass("hide");
 			}
 		});
+
+		if (!getRfpForm) {
+			_.forEach(stepsKeys, function (a) {
+				rfpForm[a] = {};
+			});
+		}
+
+		nRFPform = rfpForm[section.active()];
+
+		initFormElements();
 	}
 
 	function updateForm(id, value) {
@@ -203,8 +230,6 @@
 		intermediary.valid = _.form().validate(value, intermediary.rules);
 
 		checkObject(id);
-		console.log("Value Updated:");
-		console.log(intermediary);
 	}
 
 	function checkForm() {
@@ -215,6 +240,8 @@
 				err.push(id);
 			}
 		});
+
+		_.sessionStorage().set("rfpForm", rfpForm);
 
 		return err.length == 0 ? true : false;
 	}
@@ -232,5 +259,12 @@
 			return true;
 		}
 	}
+
+	_.forEach(rfpForm, function(section, k) {
+		$("#summary").append("<li><strong>" + rfpConfig.steps[k] + "</strong></li>");
+		_.forEach(section, function(d, k) {
+			$("#summary").append("<li>" + k + ": " + d.value + "</li>");
+		});
+	});
 
 })();
