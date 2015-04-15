@@ -150,18 +150,6 @@
 	}
 })();
 
-
-//Fire up the selects and make them change style when filled.
-(function () {
-	[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-		new SelectFx(el, {
-			onChange: function (val, selPlaceholder) {
-				$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
-			}
-		});
-	});
-})();
-
 //Fire up the popovers
 $(function () {
 	$('[data-toggle="popover"]').popover()

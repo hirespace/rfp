@@ -1,6 +1,8 @@
 (function () {
 	"use strict";
 
+	var nRFPform = {};
+
 	initFormElements();
 
 	var getRfpConfig = _.sessionStorage().get("rfpConfig");
@@ -18,7 +20,7 @@
 			activeStep: 1,
 			validationDebounce: 250
 		},
-		//rfpForm = getRfpForm ? getRfpForm : initFormElements(),
+	//rfpForm = getRfpForm ? getRfpForm : initFormElements(),
 		stepsKeys = _.keys(rfpConfig.steps),
 		activeStep = rfpConfig.activeStep,
 		section = {
@@ -54,55 +56,33 @@
 	Rx.Observable.fromEvent(input, "keyup")
 		.map(function (e) {
 			var target = $(e.target),
-				id = target.attr("id"),
-				intermediary = nRFPform[id];
+				id = target.attr("id");
 
 			return {
-				value: {
-					new: target.val(),
-					old: intermediary.value
-				},
-				rules: intermediary.rules,
-				valid: intermediary.valid,
+				value: target.val(),
 				id: id
 			};
 		})
 		.debounce(rfpConfig.validationDebounce)
-		.map(function (data) {
-			var value = data.value.new,
-				rules = data.rules,
-				valid = _.form().validate(value, rules);
-
-			return {
-				id: data.id,
-				value: value,
-				valid: valid
-			};
-		})
-		.filter(function (d) {
-			var intermediary = nRFPform[d.id];
-
-			intermediary.value = d.value;
-			intermediary.valid = d.valid;
-
-			return d.valid;
-		})
-		.subscribe(function () {
-			var intermediary = nRFPform;
-			console.log(intermediary);
-			//$(".next").removeClass("disabled");
-			//_.sessionStorage().set("rfpForm", nRFPform);
-
-			// Just for notification purposes until we've got tests
-			//console.log("rfpForm saved to sessionStorage: " + JSON.stringify(_.sessionStorage().get("nRFPform").data));
+		.distinctUntilChanged()
+		.subscribe(function (data) {
+			updateForm(data.id, data.value);
 		});
 
 	$(".rfpFormRadio").click(function (e) {
-		_.inputToggle().radio(e.target);
+		var updateData = _.inputToggle().radio(e.target);
+
+		if (updateData) {
+			updateForm(updateData.target, updateData.newValue);
+		}
 	});
 
 	$(".rfpFormCheckbox").click(function (e) {
-		_.inputToggle().checkbox(e.target);
+		var updateData = _.inputToggle().checkbox(e.target);
+
+		if (updateData) {
+			updateForm(updateData.target, updateData.newValue);
+		}
 	});
 
 	function initFormElements() {
@@ -124,8 +104,7 @@
 			});
 		});
 
-		var rfpInputs = $(".rfpFormInput, .rfpFormSelect"),
-			nRFPform = {};
+		var rfpInputs = $(".rfpFormInput, .rfpFormSelect");
 
 		_.forEach(rfpInputs, function (k) {
 			var ele = $(k);
@@ -146,8 +125,6 @@
 				};
 			}
 		});
-
-		console.log(nRFPform);
 	}
 
 	function stepActive() {
@@ -193,5 +170,29 @@
 			}
 		});
 	}
+
+	function updateForm(id, value) {
+		var intermediary = nRFPform[id];
+
+		intermediary.value = value;
+		intermediary.valid = _.form().validate(value, intermediary.rules);
+
+		console.log("Value Updated:");
+		console.log(intermediary);
+	}
+
+	// Fire up the selects and make them change style when filled.
+	[].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (el) {
+		new SelectFx(el, {
+			onChange: function (val, selPlaceholder) {
+				var id = $(el).attr("id"),
+					value = $(selPlaceholder).find(".cs-placeholder-content").html();
+
+				updateForm(id, value);
+
+				$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
+			}
+		});
+	});
 
 })();

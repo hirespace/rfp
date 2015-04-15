@@ -16,9 +16,14 @@
 	function toggleCheckbox(checkbox) {
 		var intermediary = $(checkbox),
 			target = intermediary.attr("data-for"),
+			targetDOM = $("#" + target),
 			value = intermediary.val(),
 			originalValue = $("#" + target).val(),
 			newValue;
+
+		if (!target) {
+			return false;
+		}
 
 		if (!originalValue) {
 			newValue = [value];
@@ -36,18 +41,32 @@
 			}
 		}
 
-		$("#" + target).val(JSON.stringify(newValue));
+		targetDOM.val(JSON.stringify(newValue));
+
+		// We are returning these so that we can update the form
+		return {
+			target: target,
+			newValue: newValue
+		};
 	}
 
 	// @TODO needs hell of a lot testing
 	function toggleRadio(radio) {
 		var intermediary = $(radio),
-			target = intermediary.attr("data-for");
+			target = intermediary.attr("data-for"),
+			targetDOM = $("#" + target),
+			value = intermediary.val();
 
-		if (target) {
-			var value = intermediary.val();
-
-			$("#" + target).val(value);
+		if (!target) {
+			return false;
 		}
+
+		targetDOM.val(value);
+
+		// We are returning these so that we can update the form
+		return {
+			target: target,
+			newValue: value
+		};
 	}
 })();
