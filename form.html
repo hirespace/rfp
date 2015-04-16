@@ -459,8 +459,8 @@
 
 											<div class="col-md-3">
 												<label for="rfpFormCheckboxMultiDay" class="checkbox rfpFormCheckbox">
-													<input type="checkbox" data-toggle="checkbox"
-													       id="rfpFormCheckboxMultiDay" checked
+													<input type="checkbox" data-toggle="toggleEndDate,toggleTimes"
+													       id="rfpFormCheckboxMultiDay"
 													       value="Multi-day" data-for="rfpFormDateOptions"
 													       class="custom-checkbox">
 								            	<span class="icons">
@@ -470,8 +470,8 @@
 													Multi-day
 												</label>
 												<label for="rfpFormCheckboxRepeat" class="checkbox rfpFormCheckbox">
-													<input type="checkbox" data-toggle="checkbox"
-													       id="rfpFormCheckboxRepeat" checked
+													<input type="checkbox" data-toggle="repeatInput"
+													       id="rfpFormCheckboxRepeat"
 													       value="Repeat" data-for="rfpFormDateOptions"
 													       class="custom-checkbox">
 								            	<span class="icons">
@@ -480,8 +480,8 @@
 								            	</span>
 													Repeat
 												</label>
-												<label for="rfpFormCheckboxFlexible" class="checkbox rfpFormCheckbox">
-													<input type="checkbox" data-toggle="checkbox"
+												<label for="rfpFormCheckboxFlexible" class="checkbox rfpFormCheckbox" id="toggleFlexiInput">
+													<input type="checkbox" data-toggle="flexiInput"
 													       id="rfpFormCheckboxFlexible"
 													       value="Flexible" data-for="rfpFormDateOptions"
 													       class="custom-checkbox">
@@ -494,7 +494,7 @@
 											</div>
 										</div>
 										<div class="col-md-9">
-											<span class="input input--juro top-med-margin hide" id="repeatInput">
+											<span class="input input--juro top-sm-margin hide" id="repeatInput">
 												<input class="input__field input__field--juro rfpFormInput"
 												       id="rfpFormDateOptionsRepetition" rules='["optional"]'
 												       type="text"/>
@@ -503,7 +503,7 @@
 													<span class="input__label-content input__label-content--juro">How is your conference repeating?</span>
 												</label>
 											</span>
-											<span class="input input--juro top-lg-margin  hide" id="flexiInput">
+											<span class="input input--juro top-sm-margin  hide" id="flexiInput">
 												<input class="input__field input__field--juro rfpFormInput"
 												       id="rfpFormDateOptionsFlexibility" rules='["optional"]'
 												       type="text"/>

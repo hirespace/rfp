@@ -77,6 +77,17 @@
 		var updateData = _.inputToggle().checkbox(e.target);
 
 		if (updateData) {
+			var hasToggleAttr = $(e.target).attr("data-toggle"),
+				toggle = hasToggleAttr ? hasToggleAttr : false;
+
+			if (toggle) {
+				var elems = toggle.split(",");
+
+				_.forEach(elems, function(id) {
+					$("#" + id).toggleClass("hide");
+				});
+			}
+
 			updateForm(updateData.target, updateData.newValue);
 		}
 	});
@@ -175,9 +186,7 @@
 	}
 
 	function stepNext() {
-		// Ok so this will be 1 in the end, as we also have the confirmation page in place. It is somewhat confusing
-		// though so possibly makes sense to document it or keep this comment here.
-		if (activeStep > (stepsKeys.length - 2)) {
+		if (activeStep > (stepsKeys.length - 1)) {
 			return false;
 		}
 
@@ -209,8 +218,6 @@
 				parentSection = stepsKeys[activeStep - 1];
 
 			if (toggleSection == section.active()) {
-				var parentSection = stepsKeys[activeStep - 1];
-
 				$(ele).find("span.glyphicon").remove();
 				$(ele).find("span").addClass("active");
 				$("section #" + toggleSection).removeClass("hide");
@@ -272,10 +279,10 @@
 		if (!valid) {
 			parent.addClass("input-error");
 			return false;
-		} else {
-			parent.removeClass("input-error");
-			return true;
 		}
+
+		parent.removeClass("input-error");
+		return true;
 	}
 
 	function renderConfirmationData() {
