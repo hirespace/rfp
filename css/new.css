@@ -111,6 +111,7 @@ label {
 	-o-transition: background-size .5s;
 	transition: background-size .5s;
 
+	cursor: pointer;
 	height: 150px;
 	background: transparent no-repeat center center;
 	background-size: 100% auto;
@@ -201,6 +202,7 @@ h2 .upper {
 	font-size: 16px;
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding-bottom: 5px;
+	cursor: pointer;
 }
 
 .form-stepper .form-counter {
@@ -261,4 +263,8 @@ input::-webkit-calendar-picker-indicator{
 
 input[type="date"]::-webkit-input-placeholder{ 
     visibility: hidden !important;
+}
+
+.input-error {
+	border: 2px solid orangered;
 }
