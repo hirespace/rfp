@@ -66,11 +66,7 @@
 					<div class="row">
 						<ul class="list-unstyled form-stepper text-center upper clearfix" id="vProgress">
 							<li class="col-md-3" toggle-section="event-type">
-								<!--class="active"-->
-								<span class="like-link">
-									1. Event Type
-									<!--<span class="glyphicon glyphicon-ok"></span>-->
-								</span>
+								<span class="like-link">1. Event Type</span>
 							</li>
 							<li class="col-md-3" toggle-section="details">
 								<span class="like-link">2. Details</span>
@@ -80,6 +76,9 @@
 							</li>
 							<li class="col-md-3" toggle-section="contact-info">
 								<span class="like-link">4. Contact Info</span>
+							</li>
+							<li class="col-md-3 hide" toggle-section="confirmation">
+								<span class="like-link">5. Confirmation</span>
 							</li>
 						</ul>
 					</div>
@@ -702,7 +701,7 @@
 													<input class="input__field rfpFormInput input__field--juro" type="number"
 													       id="rfpFormAccommodationHowManyRooms" rules='["optional","number"]' value="1"/>
 													<label class="input__label input__label--juro"
-													       for="viewingTimesInput">
+													       for="rfpFormAccommodationHowManyRooms">
 														<span class="input__label-content input__label-content--juro">How many rooms?</span>
 													</label>
 												</span>
@@ -747,7 +746,7 @@
 													<input class="input__field input__field--juro rfpFormInput" type="text"
 													       id="rfpFormBreakOutRoomsRequirements" rules='["optional"]'/>
 													<label class="input__label input__label--juro"
-													       for="viewingTimesInput">
+													       for="rfpFormBreakOutRoomsRequirements">
 														<span class="input__label-content input__label-content--juro">What space is required?</span>
 													</label>
 												</span>
@@ -785,7 +784,7 @@
 					                	<span class="input input--juro">
 											<input class="input__field input__field--juro rfpFormInput" type="text" id="rfpFormName"
 											       rules='["required"]'/>
-											<label class="input__label input__label--juro" for="input-1">
+											<label class="input__label input__label--juro" for="rfpFormName">
 												<span class="input__label-content input__label-content--juro"><span
 													class="glyphicon glyphicon-user"
 													style="left: -6px; top: 2px; position: relative;"></span>Name</span>
@@ -798,7 +797,7 @@
 										<span class="input input--juro">
 											<input class="input__field input__field--juro rfpFormInput" type="text" id="rfpFormCompany"
 											       rules='["optional"]'/>
-											<label class="input__label input__label--juro" for="input-2">
+											<label class="input__label input__label--juro" for="rfpFormCompany">
 												<span class="input__label-content input__label-content--juro"><span
 													class="awe awe-building"
 													style="left: -6px; top: -1px; position: relative;"></span>Company&nbsp;<small>
@@ -817,7 +816,7 @@
 											<!--@TODO should be TEL-->
 											<input class="input__field input__field--juro rfpFormInput" type="tel" id="rfpFormPhone"
 											       rules='["required","number"]'/>
-											<label class="input__label input__label--juro" for="input-2">
+											<label class="input__label input__label--juro" for="rfpFormPhone">
 												<span class="input__label-content input__label-content--juro"><span
 													class="glyphicon glyphicon-phone"
 													style="left: -6px; top: 2px; position: relative;"></span><span
@@ -830,7 +829,7 @@
 					                	<span class="input input--juro">
 											<input class="input__field input__field--juro rfpFormInput" type="email" id="rfpFormEmail"
 											       rules='["required","email"]'/>
-											<label class="input__label input__label--juro" for="input-1">
+											<label class="input__label input__label--juro" for="rfpFormEmail">
 												<span class="input__label-content input__label-content--juro"><span
 													class="glyphicon glyphicon-envelope"
 													style="left: -6px; top: 2px; position: relative;"></span><span
@@ -924,7 +923,7 @@
 									<span class="textarea textarea--juro">
 										<textarea rows="3" class="textarea__field textarea__field--juro rfpFormInput"
 										          id="rfpFormWhatElse" rules='["optional"]'></textarea>
-										<label class="textarea__label textarea__label--juro" for="textarea-3">
+										<label class="textarea__label textarea__label--juro" for="rfpFormWhatElse">
 											<span class="textarea__label-content textarea__label-content--juro"><span
 												class="glyphicon glyphicon-comment"
 												style="left: -6px; top: 3px; position: relative;"></span>Anything else we should know?</span>
@@ -938,12 +937,35 @@
 										class="awe awe-angle-left" style="left: -4px"></span>Back</strong>
 								</div>
 								<div class="col-md-6 text-right">
-									<a href="confirmation.html" class="btn btn-success btn-lg upper top-sm-margin">Finish <span
-										class="awe awe-angle-right"></span></a>
+									<strong class="btn btn-success btn-lg upper top-sm-margin next">Finish <span
+										class="awe awe-angle-right"></span></strong>
 								</div>
 							</div>
 
 						</form>
+					</section>
+
+					<!--Confirmation-->
+					<section class="hide" id="confirmation">
+						<h2 class="top-med-margin bottom-med-margin text-center">
+							<strong>Congratulations!</strong>
+							<small class="center-block top-tiny-margin">Your venue expert will be in touch within one working hour.
+							</small>
+						</h2>
+
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1 enquiry-info">
+								<h3 class="list-header">Your Enquiry Summary</h3>
+								<ul id="summary">
+
+								</ul>
+							</div>
+						</div>
+
+						<section class="bottom-med-margin text-center">
+							<a href="index.html" class="btn btn-success btn-lg upper top-med-margin">Can we help with something
+								else?<span class="hidden awe awe-angle-right"></span></a>
+						</section>
 					</section>
 				</div>
 			</div>
