@@ -2,9 +2,11 @@
 	"use strict";
 
 	var getRfpConfig = _.sessionStorage().get("rfpConfig"),
-		getRfpForm = _.sessionStorage().get("rfpForm");
+		getRfpForm = function () {
+			return _.sessionStorage().get("rfpForm");
+		};
 
-	var rfpForm = getRfpForm ? getRfpForm : {};
+	var rfpForm = getRfpForm() ? getRfpForm() : {};
 
 	var nRFPform = {},
 		rfpConfig = getRfpConfig ? getRfpConfig : {
@@ -17,7 +19,7 @@
 				"contact-info": "Contact Info",
 				"confirmation": "Confirmation"
 			},
-			activeStep: 0,
+			activeStep: 1,
 			validationDebounce: 250
 		},
 		stepsKeys = _.keys(rfpConfig.steps),
@@ -145,9 +147,9 @@
 					if (!selects[id]) {
 						new SelectFx(k, {
 							onChange: function (val, selPlaceholder) {
-								var value = $(selPlaceholder).find(".cs-placeholder-content").html();
+								var valueContent = $(selPlaceholder).find(".cs-placeholder-content").html();
 
-								updateForm(id, value);
+								updateForm(id, valueContent);
 
 								$(selPlaceholder).parent(".cs-select").addClass("cs-select-filled");
 							}
@@ -261,7 +263,7 @@
 			}
 		});
 
-		if (!getRfpForm) {
+		if (!getRfpForm()) {
 			_.forEach(stepsKeys, function (a) {
 				rfpForm[a] = {};
 			});
