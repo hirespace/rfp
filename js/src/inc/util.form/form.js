@@ -38,6 +38,9 @@
 		number: function (val) {
 			return (/^-?[0-9]+$/).test(val);
 		},
+		tel: function(val) {
+			return (/^[\(\)\s\-\+\d]{10,17}$/).test(val);
+		},
 		password: function (val) {
 			return (/^.*(?=.{6,})(?=.*\d)(?=.*[a-žA-Ž]).*$/).test(val);
 		},
