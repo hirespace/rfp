@@ -305,7 +305,10 @@
 
 	function checkObject(id) {
 		var intermediary = nRFPform[id],
-			valid = intermediary.valid,
+			val = $("#" + id).val(),
+			validLive = _.form().validate(val, intermediary.rules);
+
+		var valid = val ? validLive : intermediary.valid,
 			parent = $("#" + id).parent();
 
 		if (!valid) {
