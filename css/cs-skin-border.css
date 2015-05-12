@@ -78,6 +78,10 @@ div.cs-skin-border {
 	background-color: #535584;
 }
 
+.cs-skin-border .cs-options li.disabled span {
+	background: transparent;
+}
+
 /*Hire Space custom*/
 
 /*cs-select-filled

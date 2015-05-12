@@ -300,6 +300,9 @@
 
 		_.sessionStorage().set("rfpForm", rfpForm);
 
+		console.log(rfpForm);
+
+
 		return err.length == 0 ? true : false;
 	}
 
@@ -310,6 +313,10 @@
 
 		var valid = val ? validLive : intermediary.valid,
 			parent = $("#" + id).parent();
+
+		if (val) {
+			intermediary.value = val;
+		}
 
 		if (!valid) {
 			parent.addClass("input-error");
