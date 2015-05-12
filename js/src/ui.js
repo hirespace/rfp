@@ -300,9 +300,6 @@
 
 		_.sessionStorage().set("rfpForm", rfpForm);
 
-		console.log(rfpForm);
-
-
 		return err.length == 0 ? true : false;
 	}
 

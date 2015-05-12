@@ -80,6 +80,8 @@ div.cs-skin-border {
 
 .cs-skin-border .cs-options li.disabled span {
 	background: transparent;
+	cursor: not-allowed;
+	color: inherit;
 }
 
 /*Hire Space custom*/
