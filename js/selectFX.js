@@ -116,12 +116,17 @@
 		var self = this, options = '', createOptionHTML = function (el) {
 			var optclass = '', classes = '', link = '';
 
-			var selected = el.getAttribute('selected');
+			var selected = el.getAttribute('selected'),
+				disabled = el.getAttribute('disabled');
 
 			if (selected) {
 				classes += 'cs-selected';
 				//this.foundSelected = true;
 			}
+			if (disabled) {
+				classes += 'disabled';
+			}
+
 			// extra classes
 			if (el.getAttribute('data-class')) {
 				classes += el.getAttribute('data-class');
@@ -139,9 +144,9 @@
 		};
 
 		[].slice.call(this.el.children).forEach(function (el) {
-			if (el.disabled) {
-				return;
-			}
+			//if (el.disabled) {
+			//	return;
+			//}
 
 			var tag = el.tagName.toLowerCase();
 
@@ -188,6 +193,10 @@
 		// clicking the options
 		this.selOpts.forEach(function (opt, idx) {
 			opt.addEventListener('click', function () {
+				if ($(opt).hasClass('disabled')) {
+					return false;
+				}
+
 				self.current = idx;
 				self._changeOption();
 				// close select elem

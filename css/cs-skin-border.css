@@ -124,6 +124,7 @@ div.cs-skin-border {
 }
 .cs-select-filled span.cs-label {
 	padding: 0;
+	background-position: right 15px bottom 8px;
 }
 .cs-select-filled .cs-label-content {
 	position: relative;
