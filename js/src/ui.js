@@ -20,7 +20,7 @@
 				"confirmation": "Confirmation"
 			},
 			activeStep: 1,
-			validationDebounce: 250
+			validationDebounce: 1 // Changed to 1 because of tabbing
 		},
 		stepsKeys = _.keys(rfpConfig.steps),
 		activeStep = rfpConfig.activeStep,
