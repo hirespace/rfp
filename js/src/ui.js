@@ -64,22 +64,6 @@
 		updateForm(id, target.val());
 	});
 
-	Rx.Observable.fromEvent(input, "keyup")
-		.map(function (e) {
-			var target = $(e.target),
-				id = target.attr("id");
-
-			return {
-				value: target.val(),
-				id: id
-			};
-		})
-		.debounce(rfpConfig.validationDebounce)
-		.distinctUntilChanged()
-		.subscribe(function (data) {
-			updateForm(data.id, data.value);
-		});
-
 	radio.click(function (e) {
 		var updateData = _.inputToggle().radio(e.target);
 
