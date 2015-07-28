@@ -10,6 +10,13 @@
 	font-size: 22px;
 }
 
+.form-pretty .error-message {
+	display: block;
+	color: orangered;
+	font-size: 14px;
+	font-weight: 500;
+}
+
 label {
 	margin: 0;
 }

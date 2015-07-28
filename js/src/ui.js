@@ -272,10 +272,15 @@
 	}
 
 	function updateForm(id, value) {
-		var intermediary = nRFPform[id];
+		var intermediary = nRFPform[id],
+			isValid = _.form().validate(value, intermediary.rules);
 
 		intermediary.value = value;
-		intermediary.valid = _.form().validate(value, intermediary.rules);
+		intermediary.valid = isValid;
+        //
+		//if (!intermediary.valid) {
+		//	console.error(isValid);
+		//}
 
 		checkObject(id);
 	}
@@ -306,7 +311,27 @@
 			intermediary.value = val;
 		}
 
+		var hasErrMsg = parent.parent().find('.error-message');
+
+		if (hasErrMsg.length > 0) {
+			hasErrMsg.remove();
+		}
+
 		if (!valid) {
+			var messages = {
+				required: 'This information is required',
+				email: 'Valid email required',
+				number: 'Must be a number',
+				tel: 'Valid telephone number required',
+				password: 'Strong password required'
+			};
+
+			_.forEach(intermediary.rules, function(rule) {
+				if (messages[rule]) {
+					parent.parent().append('<strong class="error-message">' + messages[rule] + '</strong>');
+				}
+			});
+
 			parent.addClass("input-error");
 			return false;
 		}
